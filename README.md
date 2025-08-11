@@ -53,7 +53,7 @@ git pull https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
 | Horario         |    Lunes     | Martes  |  Miércoles   | Jueves | Viernes |
 |:---------------:|:------------:|:-------:|:------------:|:------:|:-------:|
 | 10:00h - 11:00h | -            | -       | -            | -      | -       |
-| 11:00h - 12:00h | LIESE        | LIESE   | Clase (Q106) | LIESE  | LIESE   |
+| 11:00h - 12:00h | -            | -       | Clase (Q106) | -      | -       |
 | 12:00h - 13:00h | LIESE        | LIESE   | Clase (Q106) | LIESE  | LIESE   |
 | 13:00h - 14:00h | LIESE        | LIESE   | LIESE        | LIESE  | LIESE   |
 | 14:00h - 15:00h | LIESE        | LIESE   | LIESE        | LIESE  | LIESE   |
@@ -61,7 +61,7 @@ git pull https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
 | 16:00h - 17:00h | LIESE        | Reunión | LIESE        | LIESE  | Reunión |
 | 17:00h - 18:00h | Clase (Q102) | LIESE   | Clase (Q102) | LIESE  | LIESE   |
 | 18:00h - 19:00h | Clase (Q102) | LIESE   | Clase (Q102) | LIESE  | LIESE   |
-| 19:00h - 20:00h | LIESE        | LIESE   | LIESE        | LIESE  | LIESE   |
+| 19:00h - 20:00h | -            | -       | -            | -      | -       |
 
 ---
 # Requisitos del curso
