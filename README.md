@@ -50,18 +50,18 @@ git pull https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
 **Cubículo:** Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE), 2do piso del edificio P, Conjunto Sur de la Facultad de Ingeniería, UNAM.
 
 **Horario:**
-| Horario         |    Lunes     | Martes  |  Miércoles   |    Jueves    | Viernes |
-|:---------------:|:------------:|:-------:|:------------:|:------------:|:-------:|
-| 11:00h - 12:00h | -            | -       | -            | -            | -       |
-| 12:00h - 13:00h | LIESE        | LIESE   | LIESE        | LIESE        | LIESE   |
-| 13:00h - 14:00h | LIESE        | LIESE   | LIESE        | Clase (Q106) | LIESE   |
-| 14:00h - 15:00h | LIESE        | LIESE   | LIESE        | Clase (Q106) | LIESE   |
-| 15:00h - 16:00h | -            | -       | -            | -            | -       |
-| 16:00h - 17:00h | LIESE        | Reunión | LIESE        | LIESE        | Reunión |
-| 17:00h - 18:00h | Clase (Q102) | LIESE   | Clase (Q102) | LIESE        | LIESE   |
-| 18:00h - 19:00h | Clase (Q102) | LIESE   | Clase (Q102) | LIESE        | LIESE   |
-| 19:00h - 20:00h | LIESE        | LIESE   | LIESE        | LIESE        | LIESE   |
-| 20:00h - 21:00h | -            | -       | -            | -            | -       |
+| Horario         |    Lunes     | Martes  |  Miércoles   |    Jueves    | Viernes  |
+|:---------------:|:------------:|:-------:|:------------:|:------------:|:--------:|
+| 11:00h - 12:00h | -            | -       | -            | -            | -        |
+| 12:00h - 13:00h | LIESE        | Reunión | Reunión      | LIESE        | Variable |
+| 13:00h - 14:00h | Reunión      | LIESE   | LIESE        | Clase (Q106) | Variable |
+| 14:00h - 15:00h | Reunión      | LIESE   | LIESE        | Clase (Q106) | Variable |
+| 15:00h - 16:00h | -            | -       | -            | -            | -        |
+| 16:00h - 17:00h | LIESE        | Reunión | LIESE        | LIESE        | Reunión  |
+| 17:00h - 18:00h | Clase (Q102) | LIESE   | Clase (Q102) | LIESE        | Variable |
+| 18:00h - 19:00h | Clase (Q102) | Reunión | Clase (Q102) | LIESE        | Variable |
+| 19:00h - 20:00h | LIESE        | LIESE   | LIESE        | LIESE        | Variable |
+| 20:00h - 21:00h | -            | -       | -            | -            | -        |
 
 ---
 # Requisitos del curso
