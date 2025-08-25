@@ -32,7 +32,7 @@ git clone https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
 ```
 2. Abrir *Code Composer Studio* y crear un nuevo *Workspace*.
 3. Ir a `File` >> `Import` >> `Code Composer Studio` >> `CCS Projects`.
-4. Seleccionar la carpeta *FI_UNAM-uC_Codes* y hacer click en `Select All`.
+4. Seleccionar la carpeta *FI_UNAM-uC_Codes/Workspace* y hacer click en `Select All`.
 5. Click en `Finish`.
 
 ## Actualizar el repositorio a la versión más reciente
