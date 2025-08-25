@@ -1,0 +1,17 @@
+# Temporary folders, caches and binaries
+*.o
+*.d
+*.out
+*.obj
+*.exe
+*.log
+*.launch
+*.tmp
+
+# Build folders
+**/.cache/
+**/.jxbrowser.userdata/
+**/.metadata/
+**/Debug/
+**/Release/
+**/RemoteSystemsTempFiles/
