@@ -27,11 +27,11 @@
 
 main:
 
-        MOV   R0, #100          ; R0 = 100
-        MOV   R1, #0x64         ; R1 = 0x64 = 100
-        MOV   R2, R1            ; R2 = 100
-        MOV   R3, #65535        ; R3 = 65,535
-        MOV   R4, #0xF41A       ; R4 = 0xF41A = 62,490
+        MOV   R0, #100                          ; R0 = 100
+        MOV   R1, #0x64                         ; R1 = 0x64 = 100
+        MOV   R2, R1                            ; R2 = 100
+        MOV   R3, #65535                        ; R3 = 65,535
+        MOV   R4, #0xF41A                       ; R4 = 0xF41A = 62,490
 
 end     B     end
         .end
