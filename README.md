@@ -14,32 +14,37 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 - [Manuales, presentaciones y material del curso](MATERIAL.md).
 
 ---
-# Uso del repositorio
-**Requisito previo:** Instalar Git.
-- Windows: Descargar e instalar [Git Bash](https://git-scm.com/downloads).
-- macOS: Descargar e instalar [Git Bash](https://git-scm.com/downloads/mac) o usar *Homebrew*:
-```
-brew install git
-```
-- Linux: Instalar desde el gestor de paquetes (ejemplo para Debian/Ubuntu):
-```
-sudo apt update && sudo apt install git
-```
+# Importar el repositorio en Code Composer Studio
 
-1. Clonar el repositorio.
-```
-git clone https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
-```
-2. Abrir *Code Composer Studio* y crear un nuevo *Workspace*.
-3. Ir a `File` >> `Import` >> `Code Composer Studio` >> `CCS Projects`.
-4. Seleccionar la carpeta *FI_UNAM-uC_Codes/Workspace* y hacer click en `Select All`.
-5. Click en `Finish`.
+1. Crear un nuevo `workspace` en *Code Composer Studio*.
 
-## Actualizar el repositorio a la versión más reciente
-Dentro de la carpeta del repositorio, ejecutar:
-```
-git pull https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
-```
+2. `File` >> `Import` >> `Git` >> `Projects from Git` >> `Clone URI`.
+
+3. En `URI`, pegar el url `https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git` y seleccionar `Next`.
+
+![alt text](Images/SourceGitRepository.png)
+
+4. Con la siguiente configuración, seleccionar `Next`.
+
+![alt text](Images/BranchSelection.png)
+
+5. Seleccionar el directorio del `workspace` (automáticamente se agregará la ruta `FI_UNAM-uC_Codes`), clic en `Next`.
+
+![alt text](Images/LocalDestination.png)
+
+6. Con la siguiente configuración, seleccionar `Next`.
+
+![alt text](Images/WizardToUseForProjects.png)
+
+7. En la siguiente ventana, seleccionar `Finish`.
+
+---
+# Actualizar el repositorio a la versión más reciente
+1. Clic derecho en el `Project Explorer` >> `Team` >> `Pull`.
+
+2. `File` >> `Import` >> `Code Composer Studio` >> `CCS Projects`.
+
+3. Seleccionar el directorio del `workspace` >> `Select All` >> `Finish`.
 
 ---
 # Contacto
@@ -72,3 +77,15 @@ git pull https://github.com/AldairLaraT/FI_UNAM-uC_Codes.git
 **Tarjeta de desarrollo:** [EK-TM4C1294XL Evaluation board](https://www.ti.com/tool/EK-TM4C1294XL).
 
 ---
+# Códigos del repositorio
+| Código | Nombre                                                                   | Lenguaje | Tema                                                           |
+|:------:|:-------------------------------------------------------------------------|:--------:|:---------------------------------------------------------------|
+| `c01`  | Instrucciones básicas del ARM Cortex-M: MOV                              | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c02`  | Instrucciones básicas del ARM Cortex-M: ADD                              | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c03`  | Instrucciones básicas del ARM Cortex-M: LDR                              | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c04`  | Instrucciones básicas del ARM Cortex-M: B                                | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c05`  | Tarea 3: Código básico en lenguaje ensamblador                           | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria            | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da         | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división   | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control             | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
