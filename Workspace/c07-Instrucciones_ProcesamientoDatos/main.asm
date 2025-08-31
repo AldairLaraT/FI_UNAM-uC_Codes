@@ -154,9 +154,9 @@ main:
 
         MOV   R0, #50                           ; R0 = 50
 
-        CMP   R0, #50                           ; actualizar APSR (R0 - 50)
-        CMP   R0, #40                           ; actualizar APSR (R0 - 40)
-        CMP   R0, #60                           ; actualizar APSR (R0 - 60)
+        CMP   R0, #50                           ; Actualizar APSR (R0 - 50)
+        CMP   R0, #40                           ; Actualizar APSR (R0 - 40)
+        CMP   R0, #60                           ; Actualizar APSR (R0 - 60)
 
 end     B     end
         .end
