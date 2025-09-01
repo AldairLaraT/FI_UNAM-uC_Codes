@@ -4,7 +4,7 @@
 ; 
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
-; Fecha:        26 de agosto de 2025
+; Fecha:        31 de agosto de 2025
 ; 
 ; Tema 03:      Modos de direccionamiento y conjunto de instrucciones
 ; Código 09:    Instrucciones del procesador ARM Cortex-M4F | Salto y control
@@ -13,23 +13,23 @@
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
 
-
-; *************************************************************************************************
-; Sección de directivas
-; ***********************************************
-
         .global main
 
 
 ; *************************************************************************************************
-; Sección de subrutinas
+; Sección de código ejecutable
 ; ***********************************************
+
+
+; ***********************************************
+; Subrutinas
 
 twos_complement
         MVN   R0, R0                            ; R0 = not R0
         ADD   R0, #1                            ; R0 = R0 + 1
 
         BX    LR                                ; Salto indirecto a LR (link register)
+
 
 add_array
         MOV   R3, #0                            ; R3 = 0
@@ -40,9 +40,9 @@ array   LDR   R0, [R1], #4                      ; R0 = [R1], R1 = R1 + 4
 
         BX    LR                                ; Salto indirecto a LR (link register)
 
-; *************************************************************************************************
-; Sección del código principal
+
 ; ***********************************************
+; Código principal
 
 main:
 
