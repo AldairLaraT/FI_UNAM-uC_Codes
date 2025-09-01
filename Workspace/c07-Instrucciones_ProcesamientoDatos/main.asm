@@ -13,22 +13,17 @@
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
 
-
-; *************************************************************************************************
-; Sección de directivas
-; ***********************************************
-
         .global main
 
 
 ; *************************************************************************************************
-; Sección del código principal
+; Sección de código ejecutable
 ; ***********************************************
 
 main:
 
-; ***********************************************
-; Operaciones de transferencia de datos
+    ; *******************************************
+    ; Operaciones de transferencia de datos
 
     ; MOV (Move)
 
@@ -57,8 +52,8 @@ main:
         MOVT  R5, #0x5678                       ; R5(31..16) = 0x5678
         MOVW  R5, #0x1234                       ; R5(15..0) = 0x1234, R5(31..16) = 0x0000
 
-; ***********************************************
-; Operaciones lógicas
+    ; *******************************************
+    ; Operaciones lógicas
 
         MOV   R0, #0x44444444                   ; R0 = 0x4444.4444
         MOV   R1, #0x77777777                   ; R1 = 0x7777.7777
@@ -89,8 +84,8 @@ main:
 
         BIC   R1, #0xFF                         ; Limpiar bits [7..0] de R1
 
-; ***********************************************
-; Operaciones de desplazamiento y rotación
+    ; *******************************************
+    ; Operaciones de desplazamiento y rotación
 
         MOV   R0, #0xFF                         ; R0 = 0xFF
         MOV   R1, #0                            ; R1 = 0
@@ -122,8 +117,8 @@ main:
         RRX   R6, R6                            ; R6 = R6 >> 1 (rotación con extensión)
         RRX   R6, R6                            ; R6 = R6 >> 1 (rotación con extensión)
 
-; ***********************************************
-; Operaciones aritméticas
+    ; *******************************************
+    ; Operaciones aritméticas
 
         MOV   R0, #0xFFFFFFFF                   ; R0 = 0xFFFF.FFFF
         MOV   R1, #1                            ; R1 = 1
