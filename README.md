@@ -80,12 +80,13 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 # Códigos del repositorio
 | Código | Nombre                                                                   | Lenguaje | Tema                                                           |
 |:------:|:-------------------------------------------------------------------------|:--------:|:---------------------------------------------------------------|
-| `c01`  | Instrucciones básicas del ARM Cortex-M: MOV                              | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c02`  | Instrucciones básicas del ARM Cortex-M: ADD                              | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c03`  | Instrucciones básicas del ARM Cortex-M: LDR                              | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c04`  | Instrucciones básicas del ARM Cortex-M: B                                | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c05`  | Tarea 3: Código básico en lenguaje ensamblador                           | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria            | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da         | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división   | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
-| `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control             | `asm`    | T03 - Modos de direccionamiento y conjunto de instrucciones    |
+| `c01`  | Instrucciones básicas del ARM Cortex-M: MOV                              | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c02`  | Instrucciones básicas del ARM Cortex-M: ADD                              | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c03`  | Instrucciones básicas del ARM Cortex-M: LDR                              | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c04`  | Instrucciones básicas del ARM Cortex-M: B                                | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c05`  | Tarea 3: Código básico en lenguaje ensamblador                           | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria            | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da         | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división   | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control             | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c10`  | Programa fuente vs programa objeto                                       | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
