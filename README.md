@@ -90,3 +90,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división   | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
 | `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control             | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
 | `c10`  | Programa fuente vs programa objeto                                       | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
+| `c11`  | Programa en lenguaje ensamblador                                         | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
