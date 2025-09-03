@@ -24,14 +24,14 @@
 ; ***********************************************
 ; Subrutinas
 
-twos_complement
+twos_complement:
         MVN   R0, R0                            ; R0 = not R0
         ADD   R0, #1                            ; R0 = R0 + 1
 
         BX    LR                                ; Salto indirecto a LR (link register)
 
 
-add_array
+add_array:
         MOV   R3, #0                            ; R3 = 0
 array   LDR   R0, [R1], #4                      ; R0 = [R1], R1 = R1 + 4
         ADD   R3, R0                            ; R3 = R3 + R0
