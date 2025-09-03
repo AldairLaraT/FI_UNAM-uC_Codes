@@ -4,7 +4,7 @@
 ; 
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
-; Fecha:        31 de agosto de 2025
+; Fecha:        03 de septiembre de 2025
 ; 
 ; Tema 04:      Lenguaje ensamblador y el ensamblador
 ; Código 11:    Programa en lenguaje ensamblador
