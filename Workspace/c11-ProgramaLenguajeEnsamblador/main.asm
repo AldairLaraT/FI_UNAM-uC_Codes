@@ -44,7 +44,7 @@ POINTER .field 0x20000000,32                    ; Define un campo de bits dentro
 ; ***********************************************
 ; Subrutinas
 
-twos_complement
+twos_complement:
         MVN   R0, R0                            ; R0 = not R0
         ADD   R0, #1                            ; R0 = R0 + 1
 
@@ -55,17 +55,16 @@ twos_complement
 ; Código principal
 
 main:
-
         MOV   R0, #50                           ; R0 = 50
         BL    twos_complement                   ; Salto con liga hacía twos_complement
 
         MOVW  R0, Dato16b
         MOVT  R0, Dato16b                       ; R0 = [Dato16b]
-        LDRH  R1, [R0]                          ; [Dato16b] = R1
+        LDRH  R1, [R0]                          ; R1 = Dato16b
 
         MOVW  R0, Dato8b
         MOVT  R0, Dato8b                        ; R0 = [Dato8b]
-        LDRB  R2, [R0]                          ; [Dato8b] = R2
+        LDRB  R2, [R0]                          ; R2 = Dato8b
 
         ADD   R1, R2                            ; R1 = R1 + R2
         MOV   R2, #DOS                          ; R2 = DOS
@@ -74,8 +73,8 @@ main:
         MOVT  R0, Dato32b                       ; R0 = [Dato32b]
         STR   R1, [R0]                          ; [Dato32b] = R1
 
-        LDR   R0, POINTER                       ; R0 = POINTER
-        LDR   R1, [R0]                          ; R1 = [POINTER]
+        LDR   R0, POINTER                       ; R0 = [POINTER]
+        LDR   R1, [R0]                          ; R1 = POINTER
 
 end     B     end
         .end                                    ; Final del programa fuente

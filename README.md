@@ -91,3 +91,10 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control             | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
 | `c10`  | Programa fuente vs programa objeto                                       | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
 | `c11`  | Programa en lenguaje ensamblador                                         | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
+| `c12`  | Estructuras de control: IF                                               | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c13`  | Estructuras de control: IF-ELSE                                          | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c14`  | Estructuras de control: SWITCH-CASE                                      | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c15`  | Estructuras de control: WHILE                                            | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c16`  | Estructuras de control: DO-WHILE                                         | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c17`  | Estructuras de control: FOR                                              | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c18`  | Variables y pase de parámetros                                           | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
