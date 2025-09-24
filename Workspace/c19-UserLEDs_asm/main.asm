@@ -1,0 +1,100 @@
+; *************************************************************************************************
+; Universidad Nacional Autónoma de México (UNAM)
+; Facultad de Ingeniería | Departamento de Electrónica
+; 
+; Asignatura:   Microprocesadores y Microcontroladores
+; Profesor:     M.I. Christo Aldair Lara Tenorio
+; Fecha:        24 de septiembre de 2025
+; 
+; Tema 06:      Puertos de entrada/salida
+; Código 19:    Control de los LED de usuario
+; Descripción:  Código en lenguaje ensamblador que enciende y apaga los LED D1 y D2 de la tarjeta
+;               de desarrollo.
+; 
+; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
+; ***********************************************
+
+        .global main
+
+
+; *************************************************************************************************
+; Sección de datos
+; ***********************************************
+
+        .data
+
+
+; *************************************************************************************************
+; Sección de código ejecutable
+; ***********************************************
+
+        .text
+
+
+; ***********************************************
+; Apuntadores
+
+    ; System Control (SYSCTL) registers
+SYSCTL_RCGCGPIO_R       .field 0x400FE608,32    ; pp382     GPIO Run Mode Clock Gating Control
+
+    ; General-Purpose Input/Output (GPIO) registers
+GPIO_PORTN_DATA_R       .field 0x4006400C,32    ; pp759     GPIO Data >> PortN[1,0] unmasked
+GPIO_PORTN_DIR_R        .field 0x40064400,32    ; pp760     GPIO Direction
+GPIO_PORTN_DEN_R        .field 0x4006451C,32    ; pp781     GPIO Digital Enable
+
+
+; ***********************************************
+; Subrutinas
+
+    ; ********************   ********************
+    ; Subrutina:    GPIO_PortN_Init
+    ;
+    ; Descripción:
+    ;   Inicialización y configuración del puerto GPIO N.
+    ; ********************   ********************
+
+GPIO_PortN_Init:
+    ; 1. Habilitar la señal de reloj del puerto GPIO y esperar dos ciclos de instrucción
+    ;    para que se estabilice el reloj.
+        LDR   R0, SYSCTL_RCGCGPIO_R
+        LDR   R1, [R0]
+        ORR   R1, #0x1000
+        STR   R1, [R0]                          ; GPIO PortN Run Mode Clock Gating Control -> Enabled
+        NOP
+        NOP                                     ; Wait for the GPIO PortN clock to stabilize
+
+    ; 2. Configurar la dirección de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTN_DIR_R
+        LDR   R1, [R0]
+        ORR   R1, #0x03
+        STR   R1, [R0]                          ; PortN[1,0] => DIR: GPIO Data direction -> Output
+
+    ; 3. Habilitar las funciones digitales de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTN_DEN_R
+        LDR   R1, [R0]
+        ORR   R1, #0x03
+        STR   R1, [R0]                          ; PortN[1,0] => Digital Enable -> Enabled
+
+        BX    LR
+
+
+; ***********************************************
+; Código principal
+
+main:
+        BL    GPIO_PortN_Init                   ; Inicialización y configuración del puerto GPIO N.
+
+        LDR   R0, GPIO_PORTN_DATA_R
+
+loop
+        LDR   R1, [R0]
+        EOR   R1, #0x02
+        STR   R1, [R0]                          ; Conmutar el LED D1
+
+        LDR   R1, [R0]
+        EOR   R1, #0x01
+        STR   R1, [R0]                          ; Conmutar el LED D2
+
+        B     loop
+
+        .end
