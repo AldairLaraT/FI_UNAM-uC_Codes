@@ -64,12 +64,12 @@ sumB    .word 0                                 ; Suma del arreglo B (variable g
     ; ********************   ********************
 
 add_array:
-        PUSH  {R4, R5, R6}                      ; Preservar contexto (registros usados como variables locales)
+        ; PUSH  {R4, R5, R6}                      ; Preservar contexto (registros usados como variables locales)
         MOV   R5, #0                            ; ACC = 0
         MOV   R6, #0                            ; i = 0
 array   LDR   R4, [R0], #4                      ; R4 = array[i], actualización del puntero
         ADD   R5, R4                            ; ACC = ACC + array[i]
-        ADDS  R6, #1                            ; i++
+        ADD   R6, #1                            ; i++
         CMP   R6, R1                            ; Comparar i con N
         BNE   array                             ; Repetir ciclo si (i < N)
 
@@ -78,7 +78,7 @@ array   LDR   R4, [R0], #4                      ; R4 = array[i], actualización 
         ; POP   {LR}                              ; Restaurar contexto (LR)
 
         MOV   R0, R5                            ; Retorno en R0 (suma del arreglo)
-        POP   {R4, R5, R6}                      ; Restaurar contexto (registros usados como variables locales)
+        ; POP   {R4, R5, R6}                      ; Restaurar contexto (registros usados como variables locales)
         BX    LR                                ; Retorno de subrutina
 
 
