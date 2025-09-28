@@ -88,11 +88,11 @@ main:
         LDR   R0, GPIO_PORTN_DATA_R
 
 loop
-        LDR   R1, [R0]
+        LDR   R1, [R0]                          ; R1 = [GPIO_PORTN_DATA_R]
         EOR   R1, #0x02
         STR   R1, [R0]                          ; LED D1 -> toggle
 
-        LDR   R1, [R0]
+        LDR   R1, [R0]                          ; R1 = [GPIO_PORTN_DATA_R]
         EOR   R1, #0x01
         STR   R1, [R0]                          ; LED D2 -> toggle
 
