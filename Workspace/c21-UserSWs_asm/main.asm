@@ -138,12 +138,14 @@ loop
         BNE   else
 
 if                                              ; IF (SW1 -> on)
-        MOV   R2, #0x02
+        LDR   R2, [R1]                          ; R2 = [GPIO_PORTN_DATA_R]
+        ORR   R2, #0x02
         STR   R2, [R1]                          ; LED D1 -> on
         B     loop
 
-else                                            ; IF (SW1 -> off)
-        MOV   R2, #0x00
+else                                            ; ELSE (SW1 -> off)
+        LDR   R2, [R1]                          ; R2 = [GPIO_PORTN_DATA_R]
+        BIC   R2, #0x02
         STR   R2, [R1]                          ; LED D2 -> off
         B     loop
 
