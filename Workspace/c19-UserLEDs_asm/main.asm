@@ -38,6 +38,7 @@
 SYSCTL_RCGCGPIO_R       .field 0x400FE608,32    ; pp382     GPIO Run Mode Clock Gating Control
 
     ; General-Purpose Input/Output (GPIO) registers
+        ; GPIO PortN
 GPIO_PORTN_DATA_R       .field 0x4006400C,32    ; pp759     GPIO Data >> PortN[1,0] unmasked
 GPIO_PORTN_DIR_R        .field 0x40064400,32    ; pp760     GPIO Direction
 GPIO_PORTN_DEN_R        .field 0x4006451C,32    ; pp781     GPIO Digital Enable
@@ -82,18 +83,18 @@ GPIO_PortN_Init:
 ; Código principal
 
 main:
-        BL    GPIO_PortN_Init                   ; Inicialización y configuración del puerto GPIO N.
+        BL    GPIO_PortN_Init                   ; Inicialización y configuración del puerto GPIO N
 
         LDR   R0, GPIO_PORTN_DATA_R
 
 loop
         LDR   R1, [R0]
         EOR   R1, #0x02
-        STR   R1, [R0]                          ; Conmutar el LED D1
+        STR   R1, [R0]                          ; LED D1 -> toggle
 
         LDR   R1, [R0]
         EOR   R1, #0x01
-        STR   R1, [R0]                          ; Conmutar el LED D2
+        STR   R1, [R0]                          ; LED D2 -> toggle
 
         B     loop
 
