@@ -98,4 +98,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c16`  | Estructuras de control: DO-WHILE                                         | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
 | `c17`  | Estructuras de control: FOR                                              | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
 | `c18`  | Variables y pase de parámetros                                           | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c19`  | Control de puertos GPIO con lenguaje ensamblador                         | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c19`  | Control de los LED de usuario                                            | `asm`    | `T06` Puertos de entrada/salida                                |
