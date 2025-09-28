@@ -1,0 +1,184 @@
+; *************************************************************************************************
+; Universidad Nacional Autónoma de México (UNAM)
+; Facultad de Ingeniería | Departamento de Electrónica
+; 
+; Asignatura:   Microprocesadores y Microcontroladores
+; Profesor:     M.I. Christo Aldair Lara Tenorio
+; Fecha:        27 de septiembre de 2025
+; 
+; Tema 06:      Puertos de entrada/salida
+; Código 23:    Control de un LED con un SW de usuario con debounce
+; Descripción:  Código en lenguaje ensamblador que conmuta el LED D1 de la tarjeta de desarrollo,
+;               dependiendo del botón SW1, considerando el efecto rebote.
+; 
+; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
+; ***********************************************
+
+        .global main
+
+
+; *************************************************************************************************
+; Sección de datos
+; ***********************************************
+
+        .data
+
+
+; *************************************************************************************************
+; Sección de código ejecutable
+; ***********************************************
+
+        .text
+
+
+; ***********************************************
+; Apuntadores
+
+    ; System Control (SYSCTL) registers
+SYSCTL_RCGCGPIO_R       .field 0x400FE608,32    ; pp382     GPIO Run Mode Clock Gating Control
+
+    ; General-Purpose Input/Output (GPIO) registers
+        ; GPIO PortJ
+GPIO_PORTJ_AHB_DATA_R   .field 0x40060004,32    ; pp759     GPIO Data >> PortJ[0] unmasked
+GPIO_PORTJ_AHB_DIR_R    .field 0x40060400,32    ; pp760     GPIO Direction
+GPIO_PORTJ_AHB_PUR_R    .field 0x40060510,32    ; pp776     GPIO Pull-Up Select
+GPIO_PORTJ_AHB_DEN_R    .field 0x4006051C,32    ; pp781     GPIO Digital Enable
+        ; GPIO PortN
+GPIO_PORTN_DATA_R       .field 0x40064008,32    ; pp759     GPIO Data >> PortN[1] unmasked
+GPIO_PORTN_DIR_R        .field 0x40064400,32    ; pp760     GPIO Direction
+GPIO_PORTN_DEN_R        .field 0x4006451C,32    ; pp781     GPIO Digital Enable
+
+
+; ***********************************************
+; Subrutinas
+
+    ; ********************   ********************
+    ; Subrutina:    GPIO_PortJ_Init
+    ;
+    ; Descripción:
+    ;   Inicialización y configuración del puerto GPIO J.
+    ; ********************   ********************
+
+GPIO_PortJ_Init:
+    ; 1. Habilitar la señal de reloj del puerto GPIO y esperar dos ciclos de instrucción
+    ;    para que se estabilice el reloj.
+        LDR   R0, SYSCTL_RCGCGPIO_R
+        LDR   R1, [R0]
+        ORR   R1, #0x0100
+        STR   R1, [R0]                          ; GPIO PortJ Run Mode Clock Gating Control -> Enabled
+        NOP
+        NOP                                     ; Wait for the GPIO PortJ clock to stabilize
+
+    ; 2. Configurar la dirección de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTJ_AHB_DIR_R
+        LDR   R1, [R0]
+        BIC   R1, #0x01
+        STR   R1, [R0]                          ; PortJ[0] => DIR: GPIO Data direction -> Input
+
+    ; 3. Habilitar las resistencias de pull-up de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTJ_AHB_PUR_R
+        LDR   R1, [R0]
+        ORR   R1, #0x01
+        STR   R1, [R0]                          ; PortJ[0] => PUE: Pad Weak Pull-Up Enable -> Enabled
+
+    ; 4. Habilitar las funciones digitales de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTJ_AHB_DEN_R
+        LDR   R1, [R0]
+        ORR   R1, #0x01
+        STR   R1, [R0]                          ; PortJ[0] => Digital Enable -> Enabled
+
+        BX    LR
+
+
+    ; ********************   ********************
+    ; Subrutina:    GPIO_PortN_Init
+    ;
+    ; Descripción:
+    ;   Inicialización y configuración del puerto GPIO N.
+    ; ********************   ********************
+
+GPIO_PortN_Init:
+    ; 1. Habilitar la señal de reloj del puerto GPIO y esperar dos ciclos de instrucción
+    ;    para que se estabilice el reloj.
+        LDR   R0, SYSCTL_RCGCGPIO_R
+        LDR   R1, [R0]
+        ORR   R1, #0x1000
+        STR   R1, [R0]                          ; GPIO PortN Run Mode Clock Gating Control -> Enabled
+        NOP
+        NOP                                     ; Wait for the GPIO PortN clock to stabilize
+
+    ; 2. Configurar la dirección de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTN_DIR_R
+        LDR   R1, [R0]
+        ORR   R1, #0x02
+        STR   R1, [R0]                          ; PortN[1] => DIR: GPIO Data direction -> Output
+
+    ; 3. Habilitar las funciones digitales de los pines del puerto GPIO
+        LDR   R0, GPIO_PORTN_DEN_R
+        LDR   R1, [R0]
+        ORR   R1, #0x02
+        STR   R1, [R0]                          ; PortN[1] => Digital Enable -> Enabled
+
+        BX    LR
+
+
+    ; ********************   ********************
+    ; Subrutina:    Delay
+    ;
+    ; Descripción:
+    ;   Retardo.
+    ;
+    ; Parámetros:
+    ;   R0  : Número de ciclos for (n)
+    ;
+    ; Registros reservados (variables locales):
+    ;   R4  : Índice (i)
+    ; ********************   ********************
+
+Delay:
+        PUSH  {R4}                              ; Preservar contexto (registros usados como variables locales)
+        MOV   R4, #0                            ; Inicialización (i = 0)
+
+Delay_for
+        CMP   R4, R0                            ; Condición (i < n)
+        BEQ   Delay_for_end                     ; Salto si Z = 1 (i = n)
+        ADD   R4, #1                            ; Actualización (i++)
+        B     Delay_for
+
+Delay_for_end
+        POP   {R4}                              ; Restaurar contexto (registros usados como variables locales)
+        BX    LR
+
+
+; ***********************************************
+; Código principal
+
+main:
+        BL    GPIO_PortJ_Init                   ; Inicialización y configuración del puerto GPIO J
+        BL    GPIO_PortN_Init                   ; Inicialización y configuración del puerto GPIO N
+
+        LDR   R4, GPIO_PORTJ_AHB_DATA_R
+        LDR   R5, GPIO_PORTN_DATA_R
+
+loop
+        LDR   R6, [R4]                          ; R6 = [GPIO_PORTJ_AHB_DATA_R]
+        CMP   R6, #0x00                         ; Condición (SW1 = on)
+        BNE   loop
+
+    ; Parámetros para subrutina Delay
+        MOVW  R0, #0x4154
+        MOVT  R0, #0x0003                       ; n = 213,332 (t = 80ms)
+        BL    Delay                             ; Retardo (debounce)
+
+        LDR   R6, [R4]                          ; R6 = [GPIO_PORTJ_AHB_DATA_R]
+        CMP   R6, #0x00                         ; Condición (SW1 = on)
+        BNE   loop
+
+if                                              ; IF (SW1 -> on)
+        LDR   R6, [R5]                          ; R6 = [GPIO_PORTN_DATA_R]
+        EOR   R6, #0x02
+        STR   R6, [R5]                          ; LED D1 -> toggle
+
+        B     loop
+
+        .end
