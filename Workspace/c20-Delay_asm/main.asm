@@ -115,12 +115,13 @@ main:
 
     ; Parámetros para subrutina Delay
         MOVW  R0, #0x7354
-        MOVT  R0, #0x00CB                       ; n = 13,333,332 (t = 5s)
-        BL    Delay                             ; Retardo
+        MOVT  R0, #0x00CB                       ; n = 13,333,332
+        BL    Delay                             ; Retardo (t = 5s)
 
         LDR   R0, GPIO_PORTN_DATA_R
-        MOV   R1, #0x02
-        STR   R1, [R0]                          ; Encender el LED D1
+        LDR   R1, [R0]                          ; R1 = [GPIO_PORTN_DATA_R]
+        ORR   R1, #0x02
+        STR   R1, [R0]                          ; LED D1 -> on
 
 end     B     end
         .end
