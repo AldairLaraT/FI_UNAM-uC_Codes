@@ -101,3 +101,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c19`  | Control de los LED de usuario                                            | `asm`    | `T06` Puertos de entrada/salida                                |
 | `c20`  | Retardos con lenguaje ensamblador                                        | `asm`    | `T06` Puertos de entrada/salida                                |
 | `c21`  | Control de un LED con un SW de usuario                                   | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c22`  | Control de un LED con un SW de usuario sin debounce                      | `asm`    | `T06` Puertos de entrada/salida                                |
