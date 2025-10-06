@@ -9,7 +9,7 @@
 ; Tema 06:      Puertos de entrada/salida
 ; Código 20:    Retardos con lenguaje ensamblador
 ; Descripción:  Código en lenguaje ensamblador que enciende el LED D1 de la tarjeta de desarrollo
-;               al finalizar un retardo.
+;               al finalizar un retardo de 5s.
 ; 
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
@@ -115,7 +115,7 @@ main:
 
     ; Parámetros para subrutina Delay
         MOVW  R0, #0x7354
-        MOVT  R0, #0x00CB                       ; n = 13,333,332
+        MOVT  R0, #0x00CB                       ; Número de ciclos FOR (n = 13,333,332)
         BL    Delay                             ; Retardo (t = 5s)
 
         LDR   R0, GPIO_PORTN_DATA_R
