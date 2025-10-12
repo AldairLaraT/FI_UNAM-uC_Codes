@@ -64,13 +64,13 @@ GPIO_PortN_Init:
         NOP
         NOP                                     ; Wait for the GPIO PortN clock to stabilize
 
-    ; 2. Configurar la dirección de los pines del puerto GPIO
+    ; 2. Configurar la dirección de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTN_DIR_R
         LDR   R1, [R0]
         ORR   R1, #0x02
         STR   R1, [R0]                          ; PortN[1] => DIR: GPIO Data direction -> Output
 
-    ; 3. Habilitar las funciones digitales de los pines del puerto GPIO
+    ; 3. Habilitar las funciones digitales de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTN_DEN_R
         LDR   R1, [R0]
         ORR   R1, #0x02
