@@ -103,3 +103,5 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c21`  | Control de un LED con un SW de usuario                                   | `asm`    | `T06` Puertos de entrada/salida                                |
 | `c22`  | Control de un LED con un SW de usuario sin debounce                      | `asm`    | `T06` Puertos de entrada/salida                                |
 | `c23`  | Control de un LED con un SW de usuario con debounce                      | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c24`  | Conmutación de un LED empleando el SysTick en modo multi-shot            | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c25`  | Conmutación de un LED empleando el SysTick en modo one-shot              | `asm`    | `T06` Puertos de entrada/salida                                |
