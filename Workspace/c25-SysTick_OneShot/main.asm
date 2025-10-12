@@ -65,7 +65,7 @@ GPIO_PortN_Init:
         LDR   R0, SYSCTL_RCGCGPIO_R
         LDR   R1, [R0]
         ORR   R1, #0x1000
-        STR   R1, [R0]                          ; GPIO PortN Run Mode Clock Gating Control -> Enabled
+        STR   R1, [R0]                          ; R12: GPIO PortN Run Mode Clock Gating Control -> Enabled
         NOP
         NOP                                     ; Wait for the GPIO PortN clock to stabilize
 
@@ -79,7 +79,7 @@ GPIO_PortN_Init:
         LDR   R0, GPIO_PORTN_DEN_R
         LDR   R1, [R0]
         ORR   R1, #0x02
-        STR   R1, [R0]                          ; PortN[1] => Digital Enable -> Enabled
+        STR   R1, [R0]                          ; PortN[1] => DEN: Digital Enable -> Enabled
 
         BX    LR
 
@@ -113,7 +113,7 @@ SysTick_Init_OneShot:
         ORR   R1, #0x01                         ; ENABLE: Enable -> Enables SysTick to operate in a multi-shot way
         STR   R1, [R0]
 
-    ; Limpiar el valor de carga/inicio del SysTick para deshabilitar al contador en el siguiente ciclo.
+    ; Limpiar el valor de carga/inicio del SysTick para deshabilitar el contador en el siguiente ciclo.
         LDR   R0, NVIC_ST_RELOAD_R
         MOV   R1, #0
         STR   R1, [R0]                          ; RELOAD: Reload Value -> Cleared
@@ -170,9 +170,9 @@ loop
         STR   R5, [R4]                          ; LED D1 -> toggle
 
     ; Parámetros para subrutina SysTick_Init
-        ; MOVW  R1, #0x0900
-        ; MOVT  R1, #0x003D                       ; Valor de carga/inicio del SysTick (ST_RELOAD) -> #0x003D.0900 (4,000,000)
-        ; BL    SysTick_Init_OneShot              ; Inicialización y configuración del SysTick en modo one-shot
+        MOVW  R1, #0x0900
+        MOVT  R1, #0x003D                       ; Valor de carga/inicio del SysTick (ST_RELOAD) -> #0x003D.0900 (4,000,000)
+        BL    SysTick_Init_OneShot              ; Inicialización y configuración del SysTick en modo one-shot
 
         B     loop
 
