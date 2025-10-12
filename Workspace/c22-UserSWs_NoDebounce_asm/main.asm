@@ -69,19 +69,19 @@ GPIO_PortJ_Init:
         NOP
         NOP                                     ; Wait for the GPIO PortJ clock to stabilize
 
-    ; 2. Configurar la dirección de los pines del puerto GPIO
+    ; 2. Configurar la dirección de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTJ_AHB_DIR_R
         LDR   R1, [R0]
         BIC   R1, #0x01
         STR   R1, [R0]                          ; PortJ[0] => DIR: GPIO Data direction -> Input
 
-    ; 3. Habilitar las resistencias de pull-up de los pines del puerto GPIO
+    ; 3. Habilitar las resistencias de pull-up de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTJ_AHB_PUR_R
         LDR   R1, [R0]
         ORR   R1, #0x01
         STR   R1, [R0]                          ; PortJ[0] => PUE: Pad Weak Pull-Up Enable -> Enabled
 
-    ; 4. Habilitar las funciones digitales de los pines del puerto GPIO
+    ; 4. Habilitar las funciones digitales de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTJ_AHB_DEN_R
         LDR   R1, [R0]
         ORR   R1, #0x01
@@ -107,13 +107,13 @@ GPIO_PortN_Init:
         NOP
         NOP                                     ; Wait for the GPIO PortN clock to stabilize
 
-    ; 2. Configurar la dirección de los pines del puerto GPIO
+    ; 2. Configurar la dirección de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTN_DIR_R
         LDR   R1, [R0]
         ORR   R1, #0x02
         STR   R1, [R0]                          ; PortN[1] => DIR: GPIO Data direction -> Output
 
-    ; 3. Habilitar las funciones digitales de los pines del puerto GPIO
+    ; 3. Habilitar las funciones digitales de los pines del puerto GPIO.
         LDR   R0, GPIO_PORTN_DEN_R
         LDR   R1, [R0]
         ORR   R1, #0x02
