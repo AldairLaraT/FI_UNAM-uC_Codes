@@ -105,3 +105,15 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c23`  | Control de un LED con un SW de usuario con debounce                      | `asm`    | `T06` Puertos de entrada/salida                                |
 | `c24`  | Conmutación de un LED empleando el SysTick en modo multi-shot            | `asm`    | `T06` Puertos de entrada/salida                                |
 | `c25`  | Conmutación de un LED empleando el SysTick en modo one-shot              | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c26`  | Estructuras de control: IF                                               | `C`      | `T08` Lenguaje C                                               |
+| `c27`  | Estructuras de control: IF-ELSE                                          | `C`      | `T08` Lenguaje C                                               |
+| `c28`  | Estructuras de control: SWITCH-CASE                                      | `C`      | `T08` Lenguaje C                                               |
+| `c29`  | Estructuras de control: WHILE                                            | `C`      | `T08` Lenguaje C                                               |
+| `c30`  | Estructuras de control: DO-WHILE                                         | `C`      | `T08` Lenguaje C                                               |
+| `c31`  | Estructuras de control: FOR                                              | `C`      | `T08` Lenguaje C                                               |
+| `c32`  | Control de los LED de usuario                                            | `C`      | `T08` Lenguaje C                                               |
+| `c33`  | Control de un LED con un SW de usuario                                   | `C`      | `T08` Lenguaje C                                               |
+| `c34`  | Control de un LED con un SW de usuario sin debounce                      | `C`      | `T08` Lenguaje C                                               |
+| `c35`  | Control de un LED con un SW de usuario con debounce                      | `C`      | `T08` Lenguaje C                                               |
+| `c36`  | Conmutación de un LED empleando el SysTick en modo multi-shot            | `C`      | `T08` Lenguaje C                                               |
+| `c37`  | Conmutación de un LED empleando el SysTick en modo one-shot              | `C`      | `T08` Lenguaje C                                               |
