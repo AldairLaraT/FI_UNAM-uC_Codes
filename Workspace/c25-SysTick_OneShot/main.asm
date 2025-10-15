@@ -88,7 +88,7 @@ GPIO_PortN_Init:
     ; Subrutina:    SysTick_Init_OneShot
     ;
     ; Descripción:
-    ;   Inicialización y configuración del SysTick.
+    ;   Inicialización y configuración del SysTick en modo one-shot.
     ;
     ; Parámetros:
     ;   R1  : Valor de carga/inicio del SysTick (ST_RELOAD)
