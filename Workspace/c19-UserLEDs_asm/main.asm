@@ -13,7 +13,7 @@
 ; 
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
-
+; borrar
         .global main
 
 
