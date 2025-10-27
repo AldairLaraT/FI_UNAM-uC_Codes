@@ -71,7 +71,7 @@
  * Variables globales
  */
 
-uint32_t Bounce_Delay = 160000;                                                                     /*  Valor de carga del SysTick para un retardo de rebote de 40ms (f = 4MHz) */
+uint32_t Bounce_Delay = 200000;                                                                     /*  Valor de carga del SysTick para un retardo de rebote de 50ms (f = 4MHz) */
 
 
 /**************************************************************************************************
@@ -178,7 +178,7 @@ void GPIO_PortJ_Handler(void) {
     while (!(NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)) {}                                               /*  SysTick => COUNT: Count Flag -> The SysTick timer has counted to 0 */
 
     /*  Confirmar que se presionó el botón */
-    if (GPIO_PORTJ_AHB_DATA_R == 0x00) {                                                            /*  IF (SW1 -> on) */
+    if (!(GPIO_PORTJ_AHB_DATA_R & 0x01)) {                                                          /*  IF (SW1 -> on) */
         GPIO_PORTN_DATA_R ^= 0x02;                                                                  /*  LED D1 -> toggle */
     }
 
