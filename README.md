@@ -118,3 +118,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c36`  | Conmutación de un LED empleando el SysTick en modo multi-shot            | `C`      | `T08` Lenguaje C                                               |
 | `c37`  | Conmutación de un LED empleando el SysTick en modo one-shot              | `C`      | `T08` Lenguaje C                                               |
 | `c38`  | Control de un LED con un SW de usuario con interrupción                  | `C`      | `T07` Interrupciones y resets                                  |
+| `c39`  | Control de un contador con los SW de usuario, empleando interrupciones   | `C`      | `T07` Interrupciones y resets                                  |
