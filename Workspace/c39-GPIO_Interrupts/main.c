@@ -7,7 +7,7 @@
  * Fecha:       22 de octubre de 2025
  * 
  * Tema 07:     Interrupciones y resets
- * Código 39:   Control de un contador con los SW de usuario, empleando interrupciones.
+ * Código 39:   Control de un contador con los SW de usuario, empleando interrupciones
  * Descripción: Código en lenguaje C que actualiza el valor de un contador, dependiendo del botón
  *              que se presiona (SW1 y SW2 de la tarjeta de desarrollo), ejecutando una tarea
  *              distinta en el código principal (conmutación de los LED de usuario).
@@ -30,11 +30,11 @@
 /************************************************
  * Nested Vectored Interrupt Controller (NVIC) registers                                                pp146   Register map
  */
-    // System Timer (SysTick) registers
+    /*  System Timer (SysTick) registers */
 #define NVIC_ST_CTRL_R              (*((volatile uint32_t *)0xE000E010))                            /*  pp150   SysTick Control and Status */
 #define NVIC_ST_RELOAD_R            (*((volatile uint32_t *)0xE000E014))                            /*  pp152   SysTick Reload Value */
 #define NVIC_ST_CURRENT_R           (*((volatile uint32_t *)0xE000E018))                            /*  pp153   SysTick Current Value */
-    // Nested Vectored Interrupt Controller (NVIC) registers
+    /*  Nested Vectored Interrupt Controller (NVIC) registers */
 #define NVIC_EN1_R                  (*((volatile uint32_t *)0xE000E104))                            /*  pp154   Interrupt 32-63 Set Enable */
 #define NVIC_PRI12_R                (*((volatile uint32_t *)0xE000E430))                            /*  pp159   Interrupt 48-51 Priority */
 
@@ -47,11 +47,11 @@
 /************************************************
  * General-Purpose Input/Output (GPIO) registers                                                        pp757   Register map
  */
-    // GPIO Port F (PortF)
+    /*  GPIO Port F (PortF) */
 #define GPIO_PORTF_AHB_DATA_R       (*((volatile uint32_t *)0x4005D044))                            /*  pp759   GPIO Data >> PortF[4,0] unmasked */
 #define GPIO_PORTF_AHB_DIR_R        (*((volatile uint32_t *)0x4005D400))                            /*  pp760   GPIO Direction */
 #define GPIO_PORTF_AHB_DEN_R        (*((volatile uint32_t *)0x4005D51C))                            /*  pp781   GPIO Digital Enable */
-    // GPIO Port J (PortJ)
+    /*  GPIO Port J (PortJ) */
 #define GPIO_PORTJ_AHB_DATA_R       (*((volatile uint32_t *)0x4006000C))                            /*  pp759   GPIO Data >> PortJ[1,0] unmasked */
 #define GPIO_PORTJ_AHB_DIR_R        (*((volatile uint32_t *)0x40060400))                            /*  pp760   GPIO Direction */
 #define GPIO_PORTJ_AHB_IS_R         (*((volatile uint32_t *)0x40060404))                            /*  pp761   GPIO Interrupt Sense */
@@ -62,7 +62,7 @@
 #define GPIO_PORTJ_AHB_ICR_R        (*((volatile uint32_t *)0x4006041C))                            /*  pp769   GPIO Interrupt Clear */
 #define GPIO_PORTJ_AHB_PUR_R        (*((volatile uint32_t *)0x40060510))                            /*  pp776   GPIO Pull-Up Select */
 #define GPIO_PORTJ_AHB_DEN_R        (*((volatile uint32_t *)0x4006051C))                            /*  pp781   GPIO Digital Enable */
-    // GPIO Port N (PortN)
+    /*  GPIO Port N (PortN) */
 #define GPIO_PORTN_DATA_R           (*((volatile uint32_t *)0x4006400C))                            /*  pp759   GPIO Data >> PortN[1,0] unmasked */
 #define GPIO_PORTN_DIR_R            (*((volatile uint32_t *)0x40064400))                            /*  pp760   GPIO Direction */
 #define GPIO_PORTN_DEN_R            (*((volatile uint32_t *)0x4006451C))                            /*  pp781   GPIO Digital Enable */
