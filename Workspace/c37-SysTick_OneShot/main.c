@@ -29,7 +29,7 @@
 /************************************************
  * Nested Vectored Interrupt Controller (NVIC) registers                                                pp146   Register map
  */
-    // System Timer (SysTick) registers
+    /*  System Timer (SysTick) registers */
 #define NVIC_ST_CTRL_R              (*((volatile uint32_t *)0xE000E010))                            /*  pp150   SysTick Control and Status */
 #define NVIC_ST_RELOAD_R            (*((volatile uint32_t *)0xE000E014))                            /*  pp152   SysTick Reload Value */
 #define NVIC_ST_CURRENT_R           (*((volatile uint32_t *)0xE000E018))                            /*  pp153   SysTick Current Value */
@@ -43,7 +43,7 @@
 /************************************************
  * General-Purpose Input/Output (GPIO) registers                                                        pp757   Register map
  */
-    // GPIO Port N (PortN)
+    /*  GPIO Port N (PortN) */
 #define GPIO_PORTN_DATA_R           (*((volatile uint32_t *)0x40064008))                            /*  pp759   GPIO Data >> PortN[1] unmasked */
 #define GPIO_PORTN_DIR_R            (*((volatile uint32_t *)0x40064400))                            /*  pp760   GPIO Direction */
 #define GPIO_PORTN_DEN_R            (*((volatile uint32_t *)0x4006451C))                            /*  pp781   GPIO Digital Enable */
