@@ -35,12 +35,12 @@
 /************************************************
  * General-Purpose Input/Output (GPIO) registers                                                        pp757   Register map
  */
-    // GPIO Port J (PortJ)
+    /*  GPIO Port J (PortJ) */
 #define GPIO_PORTJ_AHB_DATA_R       (*((volatile uint32_t *)0x40060004))                            /*  pp759   GPIO Data >> PortJ[0] unmasked */
 #define GPIO_PORTJ_AHB_DIR_R        (*((volatile uint32_t *)0x40060400))                            /*  pp760   GPIO Direction */
 #define GPIO_PORTJ_AHB_PUR_R        (*((volatile uint32_t *)0x40060510))                            /*  pp776   GPIO Pull-Up Select */
 #define GPIO_PORTJ_AHB_DEN_R        (*((volatile uint32_t *)0x4006051C))                            /*  pp781   GPIO Digital Enable */
-    // GPIO Port N (PortN)
+    /*  GPIO Port N (PortN) */
 #define GPIO_PORTN_DATA_R           (*((volatile uint32_t *)0x40064008))                            /*  pp759   GPIO Data >> PortN[1] unmasked */
 #define GPIO_PORTN_DIR_R            (*((volatile uint32_t *)0x40064400))                            /*  pp760   GPIO Direction */
 #define GPIO_PORTN_DEN_R            (*((volatile uint32_t *)0x4006451C))                            /*  pp781   GPIO Digital Enable */
