@@ -78,44 +78,52 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 
 ---
 # Códigos del repositorio
-| Código | Nombre                                                                   | Lenguaje | Tema                                                           |
-|:------:|:-------------------------------------------------------------------------|:--------:|:---------------------------------------------------------------|
-| `c01`  | Instrucciones básicas del ARM Cortex-M: MOV                              | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c02`  | Instrucciones básicas del ARM Cortex-M: ADD                              | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c03`  | Instrucciones básicas del ARM Cortex-M: LDR                              | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c04`  | Instrucciones básicas del ARM Cortex-M: B                                | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c05`  | Tarea 3: Código básico en lenguaje ensamblador                           | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria            | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da         | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división   | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control             | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c10`  | Programa fuente vs programa objeto                                       | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
-| `c11`  | Programa en lenguaje ensamblador                                         | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
-| `c12`  | Estructuras de control: IF                                               | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c13`  | Estructuras de control: IF-ELSE                                          | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c14`  | Estructuras de control: SWITCH-CASE                                      | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c15`  | Estructuras de control: WHILE                                            | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c16`  | Estructuras de control: DO-WHILE                                         | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c17`  | Estructuras de control: FOR                                              | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c18`  | Variables y pase de parámetros                                           | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
-| `c19`  | Control de los LED de usuario                                            | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c20`  | Retardos con lenguaje ensamblador                                        | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c21`  | Control de un LED con un SW de usuario                                   | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c22`  | Control de un LED con un SW de usuario sin debounce                      | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c23`  | Control de un LED con un SW de usuario con debounce                      | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c24`  | Conmutación de un LED empleando el SysTick en modo multi-shot            | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c25`  | Conmutación de un LED empleando el SysTick en modo one-shot              | `asm`    | `T06` Puertos de entrada/salida                                |
-| `c26`  | Estructuras de control: IF                                               | `C`      | `T08` Lenguaje C                                               |
-| `c27`  | Estructuras de control: IF-ELSE                                          | `C`      | `T08` Lenguaje C                                               |
-| `c28`  | Estructuras de control: SWITCH-CASE                                      | `C`      | `T08` Lenguaje C                                               |
-| `c29`  | Estructuras de control: WHILE                                            | `C`      | `T08` Lenguaje C                                               |
-| `c30`  | Estructuras de control: DO-WHILE                                         | `C`      | `T08` Lenguaje C                                               |
-| `c31`  | Estructuras de control: FOR                                              | `C`      | `T08` Lenguaje C                                               |
-| `c32`  | Control de los LED de usuario                                            | `C`      | `T08` Lenguaje C                                               |
-| `c33`  | Control de un LED con un SW de usuario                                   | `C`      | `T08` Lenguaje C                                               |
-| `c34`  | Control de un LED con un SW de usuario sin debounce                      | `C`      | `T08` Lenguaje C                                               |
-| `c35`  | Control de un LED con un SW de usuario con debounce                      | `C`      | `T08` Lenguaje C                                               |
-| `c36`  | Conmutación de un LED empleando el SysTick en modo multi-shot            | `C`      | `T08` Lenguaje C                                               |
-| `c37`  | Conmutación de un LED empleando el SysTick en modo one-shot              | `C`      | `T08` Lenguaje C                                               |
-| `c38`  | Control de un LED con un SW de usuario con interrupción                  | `C`      | `T07` Interrupciones y resets                                  |
-| `c39`  | Control de un contador con los SW de usuario, empleando interrupciones   | `C`      | `T07` Interrupciones y resets                                  |
+| Código | Nombre                                                                               | Lenguaje | Tema                                                           |
+|:------:|:-------------------------------------------------------------------------------------|:--------:|:---------------------------------------------------------------|
+| `c01`  | Instrucciones básicas del ARM Cortex-M: MOV                                          | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c02`  | Instrucciones básicas del ARM Cortex-M: ADD                                          | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c03`  | Instrucciones básicas del ARM Cortex-M: LDR                                          | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c04`  | Instrucciones básicas del ARM Cortex-M: B                                            | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c05`  | Tarea 3: Código básico en lenguaje ensamblador                                       | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria                        | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da                     | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división               | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control                         | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c10`  | Programa fuente vs programa objeto                                                   | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
+| `c11`  | Programa en lenguaje ensamblador                                                     | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
+| `c12`  | Estructuras de control: IF                                                           | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c13`  | Estructuras de control: IF-ELSE                                                      | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c14`  | Estructuras de control: SWITCH-CASE                                                  | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c15`  | Estructuras de control: WHILE                                                        | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c16`  | Estructuras de control: DO-WHILE                                                     | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c17`  | Estructuras de control: FOR                                                          | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c18`  | Variables y pase de parámetros                                                       | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
+| `c19`  | Control de los LED de usuario                                                        | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c20`  | Retardos con lenguaje ensamblador                                                    | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c21`  | Control de un LED con un SW de usuario                                               | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c22`  | Control de un LED con un SW de usuario sin debounce                                  | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c23`  | Control de un LED con un SW de usuario con debounce                                  | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c24`  | Conmutación de un LED empleando el SysTick en modo multi-shot                        | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c25`  | Conmutación de un LED empleando el SysTick en modo one-shot                          | `asm`    | `T06` Puertos de entrada/salida                                |
+| `c26`  | Estructuras de control: IF                                                           | `C`      | `T08` Lenguaje C                                               |
+| `c27`  | Estructuras de control: IF-ELSE                                                      | `C`      | `T08` Lenguaje C                                               |
+| `c28`  | Estructuras de control: SWITCH-CASE                                                  | `C`      | `T08` Lenguaje C                                               |
+| `c29`  | Estructuras de control: WHILE                                                        | `C`      | `T08` Lenguaje C                                               |
+| `c30`  | Estructuras de control: DO-WHILE                                                     | `C`      | `T08` Lenguaje C                                               |
+| `c31`  | Estructuras de control: FOR                                                          | `C`      | `T08` Lenguaje C                                               |
+| `c32`  | Control de los LED de usuario                                                        | `C`      | `T08` Lenguaje C                                               |
+| `c33`  | Control de un LED con un SW de usuario                                               | `C`      | `T08` Lenguaje C                                               |
+| `c34`  | Control de un LED con un SW de usuario sin debounce                                  | `C`      | `T08` Lenguaje C                                               |
+| `c35`  | Control de un LED con un SW de usuario con debounce                                  | `C`      | `T08` Lenguaje C                                               |
+| `c36`  | Conmutación de un LED empleando el SysTick en modo multi-shot                        | `C`      | `T08` Lenguaje C                                               |
+| `c37`  | Conmutación de un LED empleando el SysTick en modo one-shot                          | `C`      | `T08` Lenguaje C                                               |
+| `c38`  | Control de un LED con un SW de usuario con interrupción                              | `C`      | `T07` Interrupciones y resets                                  |
+| `c39`  | Control de un contador con los SW de usuario, empleando interrupciones               | `C`      | `T07` Interrupciones y resets                                  |
+| `c40`  | Control de los LED de usuario (modular)                                              | `C`      | `T09` Periféricos                                              |
+| `c41`  | Control de un LED con un SW de usuario (modular)                                     | `C`      | `T09` Periféricos                                              |
+| `c42`  | Control de un LED con un SW de usuario sin debounce (modular)                        | `C`      | `T09` Periféricos                                              |
+| `c43`  | Control de un LED con un SW de usuario con debounce (modular)                        | `C`      | `T09` Periféricos                                              |
+| `c44`  | Conmutación de un LED empleando el SysTick en modo multi-shot (modular)              | `C`      | `T09` Periféricos                                              |
+| `c45`  | Conmutación de un LED empleando el SysTick en modo one-shot (modular)                | `C`      | `T09` Periféricos                                              |
+| `c46`  | Control de un LED con un SW de usuario con interrupción (modular)                    | `C`      | `T09` Periféricos                                              |
+| `c47`  | Control de un contador con los SW de usuario, empleando interrupciones (modular)     | `C`      | `T09` Periféricos                                              |
