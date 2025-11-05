@@ -127,3 +127,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c45`  | Conmutación de un LED empleando el SysTick en modo one-shot (modular)                | `C`      | `T09` Periféricos                                              |
 | `c46`  | Control de un LED con un SW de usuario con interrupción (modular)                    | `C`      | `T09` Periféricos                                              |
 | `c47`  | Control de un contador con los SW de usuario, empleando interrupciones (modular)     | `C`      | `T09` Periféricos                                              |
+| `c48`  | Convertidor analógico digital (ADC)                                                  | `C`      | `T09` Periféricos                                              |
