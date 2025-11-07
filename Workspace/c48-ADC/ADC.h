@@ -54,4 +54,4 @@
 void ADC0_SS3_Init();                                                                               /*  Inicialización y configuración del ADC_0, SS_3 */
 
 
-#endif                                                                                              /*  GPIO_H */
+#endif                                                                                              /*  ADC_H */
