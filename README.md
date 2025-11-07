@@ -128,3 +128,6 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c46`  | Control de un LED con un SW de usuario con interrupción (modular)                    | `C`      | `T09` Periféricos                                              |
 | `c47`  | Control de un contador con los SW de usuario, empleando interrupciones (modular)     | `C`      | `T09` Periféricos                                              |
 | `c48`  | Convertidor analógico digital (ADC)                                                  | `C`      | `T09` Periféricos                                              |
+| `c49`  | Convertidor analógico digital (ADC): Sensor de temperatura                           | `C`      | `T09` Periféricos                                              |
+| `c50`  | Convertidor analógico digital (ADC): Multicanal                                      | `C`      | `T09` Periféricos                                              |
+| `c51`  | Convertidor analógico digital (ADC): Interrupción                                    | `C`      | `T09` Periféricos                                              |
