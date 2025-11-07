@@ -7,7 +7,7 @@
  * Fecha:       04 de noviembre de 2025
  * 
  * Tema 09:     Periféricos
- * Código 49:   Convertidor analógico digital (ADC)
+ * Código 49:   Convertidor analógico digital (ADC): Sensor de temperatura embebido
  * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
  *              muestras SS_3 para leer el valor del sensor de temperatura embebido en el
  *              microcontrolador y usar los LED de usuario de la tarjeta de desarrollo como
