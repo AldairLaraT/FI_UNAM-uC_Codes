@@ -1,27 +1,28 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       06 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          06 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 51:   Convertidor analógico digital (ADC): Interrupción
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
- *              muestras SS_1 para leer el valor de dos potenciómetros conectados en las entradas
- *              analógicas AIN_10 (PB4) y AIN_17 (PK1), empleando interrupciones, usando los LED
- *              de usuario de la tarjeta de desarrollo como indicador del nivel de voltaje de un
- *              potenciómetro, dependiendo del último botón (SW1 o SW2) presionado.
+ *  Tema 09:        Periféricos
+ *  Código 51:      Convertidor analógico digital (ADC): Interrupción
+ *  Descripción:    Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
+ *                  de muestras SS_1 para leer el valor de dos potenciómetros conectados en las
+ *                  entradas analógicas AIN_10 (PB4) y AIN_17 (PK1), empleando interrupciones,
+ *                  usando los LED de usuario de la tarjeta de desarrollo como indicador del nivel
+ *                  de voltaje de un potenciómetro, dependiendo del último botón (SW1 o SW2)
+ *                  presionado.
  * 
- * Archivo:     Archivo fuente del módulo GPIO
+ *  Archivo:        Archivo fuente del módulo GPIO
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include "GPIO.h"                                                                                   /*  Archivo de cabecera del módulo GPIO */
@@ -30,18 +31,18 @@
 
 
 /**************************************************************************************************
- * Variables externas (parámetros)
+ *  Variables externas (parámetros)
  */
 
 
 /**************************************************************************************************
- * Funciones
+ *  Funciones
  */
 
 /************************************************
- * Función:     GPIO_PortF_Init
+ *  Función:        GPIO_PortF_Init
  * 
- * Descripción: Inicialización y configuración del puerto GPIO F.
+ *  Descripción:    Inicialización y configuración del puerto GPIO F.
  */
 
 void GPIO_PortF_Init(void) {
@@ -65,7 +66,7 @@ void GPIO_PortF_Init(void) {
 
     /** 8.  Configurar como open drain y las resistencias de pull-up / pull-down. */
 
-    /** 9. Habilitar las funciones digitales de los pines del puerto GPIO. */
+    /** 9.  Habilitar las funciones digitales de los pines del puerto GPIO. */
     GPIO_PORTF_AHB_DEN_R |= 0x11;                                                                   /*  PortF[4,0] => DEN: Digital Enable -> Enabled */
 
     /** 10. Si se utiliza interrupción, configurar la sensibilidad y el tipo de evento. Además de
@@ -74,9 +75,9 @@ void GPIO_PortF_Init(void) {
 }
 
 /************************************************
- * Función:     GPIO_PortJ_Init
+ *  Función:        GPIO_PortJ_Init
  * 
- * Descripción: Inicialización y configuración del puerto GPIO J.
+ *  Descripción:    Inicialización y configuración del puerto GPIO J.
  */
 
 void GPIO_PortJ_Init(void) {
@@ -101,7 +102,7 @@ void GPIO_PortJ_Init(void) {
     /** 8.  Configurar como open drain y las resistencias de pull-up / pull-down. */
     GPIO_PORTJ_AHB_PUR_R |= 0x03;                                                                   /*  PortJ[1,0] => PUE: Pad Weak Pull-Up Enable -> Enabled */
 
-    /** 9. Habilitar las funciones digitales de los pines del puerto GPIO. */
+    /** 9.  Habilitar las funciones digitales de los pines del puerto GPIO. */
     GPIO_PORTJ_AHB_DEN_R |= 0x03;                                                                   /*  PortJ[1,0] => DEN: Digital Enable -> Enabled */
 
     /** 10. Si se utiliza interrupción, configurar la sensibilidad y el tipo de evento. Además de
@@ -109,6 +110,7 @@ void GPIO_PortJ_Init(void) {
     GPIO_PORTJ_AHB_IS_R &= ~0x03;                                                                   /*  PortJ[1,0] => IS: Interrupt Sense -> Edge-sensitive */
     GPIO_PORTJ_AHB_IBE_R &= ~0x03;                                                                  /*  PortJ[1,0] => IBE: Interrupt Both Edges -> Controlled by GPIO_IEV */
     GPIO_PORTJ_AHB_IEV_R &= ~0x03;                                                                  /*  PortJ[1,0] => IEV: Interrupt Event -> Falling edge */
+
     /** Limpiar la bandera de interrupción. */
     GPIO_PORTJ_AHB_ICR_R |= 0x03;                                                                   /*  PortJ[1,0] => IC: Interrupt Clear -> Interrupt cleared */
 
@@ -128,9 +130,9 @@ void GPIO_PortJ_Init(void) {
 }
 
 /************************************************
- * Función:     GPIO_PortN_Init
+ *  Función:        GPIO_PortN_Init
  * 
- * Descripción: Inicialización y configuración del puerto GPIO N.
+ *  Descripción:    Inicialización y configuración del puerto GPIO N.
  */
 
 void GPIO_PortN_Init(void) {
@@ -154,7 +156,7 @@ void GPIO_PortN_Init(void) {
 
     /** 8.  Configurar como open drain y las resistencias de pull-up / pull-down. */
 
-    /** 9. Habilitar las funciones digitales de los pines del puerto GPIO. */
+    /** 9.  Habilitar las funciones digitales de los pines del puerto GPIO. */
     GPIO_PORTN_DEN_R |= 0x03;                                                                       /*  PortN[1,0] => DEN: Digital Enable -> Enabled */
 
     /** 10. Si se utiliza interrupción, configurar la sensibilidad y el tipo de evento. Además de

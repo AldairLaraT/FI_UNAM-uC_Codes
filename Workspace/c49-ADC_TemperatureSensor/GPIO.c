@@ -1,26 +1,26 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       04 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          04 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 49:   Convertidor analógico digital (ADC): Sensor de temperatura embebido
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
- *              muestras SS_3 para leer el valor del sensor de temperatura embebido en el
- *              microcontrolador y usar los LED de usuario de la tarjeta de desarrollo como
- *              indicador de la temperatura.
+ *  Tema 09:        Periféricos
+ *  Código 49:      Convertidor analógico digital (ADC): Sensor de temperatura embebido
+ *  Descripción:    Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
+ *                  de muestras SS_3 para leer el valor del sensor de temperatura embebido en el
+ *                  microcontrolador y usar los LED de usuario de la tarjeta de desarrollo como
+ *                  indicador de la temperatura.
  * 
- * Archivo:     Archivo fuente del módulo GPIO
+ *  Archivo:        Archivo fuente del módulo GPIO
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include "GPIO.h"                                                                                   /*  Archivo de cabecera del módulo GPIO */
@@ -28,18 +28,18 @@
 
 
 /**************************************************************************************************
- * Variables externas (parámetros)
+ *  Variables externas (parámetros)
  */
 
 
 /**************************************************************************************************
- * Funciones
+ *  Funciones
  */
 
 /************************************************
- * Función:     GPIO_PortF_Init
+ *  Función:        GPIO_PortF_Init
  * 
- * Descripción: Inicialización y configuración del puerto GPIO F.
+ *  Descripción:    Inicialización y configuración del puerto GPIO F.
  */
 
 void GPIO_PortF_Init(void) {
@@ -63,7 +63,7 @@ void GPIO_PortF_Init(void) {
 
     /** 8.  Configurar como open drain y las resistencias de pull-up / pull-down. */
 
-    /** 9. Habilitar las funciones digitales de los pines del puerto GPIO. */
+    /** 9.  Habilitar las funciones digitales de los pines del puerto GPIO. */
     GPIO_PORTF_AHB_DEN_R |= 0x11;                                                                   /*  PortF[4,0] => DEN: Digital Enable -> Enabled */
 
     /** 10. Si se utiliza interrupción, configurar la sensibilidad y el tipo de evento. Además de
@@ -72,9 +72,9 @@ void GPIO_PortF_Init(void) {
 }
 
 /************************************************
- * Función:     GPIO_PortN_Init
+ *  Función:        GPIO_PortN_Init
  * 
- * Descripción: Inicialización y configuración del puerto GPIO N.
+ *  Descripción:    Inicialización y configuración del puerto GPIO N.
  */
 
 void GPIO_PortN_Init(void) {
@@ -98,7 +98,7 @@ void GPIO_PortN_Init(void) {
 
     /** 8.  Configurar como open drain y las resistencias de pull-up / pull-down. */
 
-    /** 9. Habilitar las funciones digitales de los pines del puerto GPIO. */
+    /** 9.  Habilitar las funciones digitales de los pines del puerto GPIO. */
     GPIO_PORTN_DEN_R |= 0x03;                                                                       /*  PortN[1,0] => DEN: Digital Enable -> Enabled */
 
     /** 10. Si se utiliza interrupción, configurar la sensibilidad y el tipo de evento. Además de

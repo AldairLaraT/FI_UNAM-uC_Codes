@@ -1,22 +1,22 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       01 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          01 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 45:   SysTick en modo one-shot (modular)
- * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo con una
- *              frecuencia de 1Hz, empleando el SysTick en modo one-shot.
+ *  Tema 09:        Periféricos
+ *  Código 45:      SysTick en modo one-shot (modular)
+ *  Descripción:    Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo con una
+ *                  frecuencia de 1Hz, empleando el SysTick en modo one-shot.
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include <stdint.h>                                                                                 /*  Tipos enteros con tamaños fijos */
@@ -26,12 +26,12 @@
 
 
 /**************************************************************************************************
- * Variables globales
+ *  Variables globales
  */
 
 
 /**************************************************************************************************
- * Función principal
+ *  Función principal
  */
 
 int main(void) {
@@ -42,7 +42,10 @@ int main(void) {
     SysTick_Init_OneShot (Delay);                                                                   /*  Inicialización y configuración del SysTick en modo one-shot */
 
     while (1) {
+
+        /** Esperar a que termine la cuenta del SysTick. */
         while (!(NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)) {}                                           /*  SysTick => COUNT: Count Flag -> The SysTick timer has counted to 0 */
+
         GPIO_PORTN_DATA_R ^= 0x02;                                                                  /*  LED D1 -> toggle */
         SysTick_Init_OneShot (Delay);                                                               /*  Inicialización y configuración del SysTick en modo one-shot */
     }

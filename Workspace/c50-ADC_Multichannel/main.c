@@ -1,25 +1,25 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       06 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          06 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 50:   Convertidor analógico digital (ADC): Multicanal
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
- *              muestras SS_1 para leer el valor de dos potenciómetros conectados en las entradas
- *              analógicas AIN_10 (PB4) y AIN_17 (PK1), usando los LED de usuario de la tarjeta
- *              de desarrollo como indicador del nivel de voltaje de un potenciómetro, dependiendo
- *              del último botón (SW1 o SW2) presionado.
+ *  Tema 09:        Periféricos
+ *  Código 50:      Convertidor analógico digital (ADC): Multicanal
+ *  Descripción:    Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
+ *                  de muestras SS_1 para leer el valor de dos potenciómetros conectados en las
+ *                  entradas analógicas AIN_10 (PB4) y AIN_17 (PK1), usando los LED de usuario de
+ *                  la tarjeta de desarrollo como indicador del nivel de voltaje de un
+ *                  potenciómetro, dependiendo del último botón (SW1 o SW2) presionado.
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include <stdint.h>                                                                                 /*  Tipos enteros con tamaños fijos */
@@ -31,7 +31,7 @@
 
 
 /**************************************************************************************************
- * Variables globales
+ *  Variables globales
  */
 
 uint8_t pot_select = 0;                                                                             /*  Selección del potenciómetro */
@@ -42,7 +42,7 @@ uint32_t Bounce_Delay = 200000;                                                 
 
 
 /**************************************************************************************************
- * Función principal
+ *  Función principal
  */
 
 int main(void) {
@@ -79,23 +79,23 @@ int main(void) {
         }
 
         if (LED_control_value < limit1) {
-            GPIO_PORTN_DATA_R = 0x00;
-            GPIO_PORTF_AHB_DATA_R = 0x00;
+            GPIO_PORTN_DATA_R = 0x00;                                                               /*  LED D1 -> off | LED D2 -> off */
+            GPIO_PORTF_AHB_DATA_R = 0x00;                                                           /*  LED D3 -> off | LED D4 -> off */
         }
         else if (LED_control_value < limit2) {
-            GPIO_PORTN_DATA_R = 0x02;
-            GPIO_PORTF_AHB_DATA_R = 0x00;
+            GPIO_PORTN_DATA_R = 0x02;                                                               /*  LED D1 -> on  | LED D2 -> off */
+            GPIO_PORTF_AHB_DATA_R = 0x00;                                                           /*  LED D3 -> off | LED D4 -> off */
         }
         else if (LED_control_value < limit3) {
-            GPIO_PORTN_DATA_R = 0x03;
-            GPIO_PORTF_AHB_DATA_R = 0x00;
+            GPIO_PORTN_DATA_R = 0x03;                                                               /*  LED D1 -> on  | LED D2 -> on  */
+            GPIO_PORTF_AHB_DATA_R = 0x00;                                                           /*  LED D3 -> off | LED D4 -> off */
         }
         else if (LED_control_value < limit4) {
-            GPIO_PORTN_DATA_R = 0x03;
-            GPIO_PORTF_AHB_DATA_R = 0x10;
+            GPIO_PORTN_DATA_R = 0x03;                                                               /*  LED D1 -> on  | LED D2 -> on  */
+            GPIO_PORTF_AHB_DATA_R = 0x10;                                                           /*  LED D3 -> on  | LED D4 -> off */
         } else {
-            GPIO_PORTN_DATA_R = 0x03;
-            GPIO_PORTF_AHB_DATA_R = 0x11;
+            GPIO_PORTN_DATA_R = 0x03;                                                               /*  LED D1 -> on  | LED D2 -> on  */
+            GPIO_PORTF_AHB_DATA_R = 0x11;                                                           /*  LED D3 -> on  | LED D4 -> on  */
         }
     }
 }

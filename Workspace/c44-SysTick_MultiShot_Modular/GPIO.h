@@ -1,19 +1,19 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       01 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          01 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 44:   SysTick en modo multi-shot (modular)
- * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo con una
- *              frecuencia de 1Hz, empleando el SysTick en modo multi-shot.
+ *  Tema 09:        Periféricos
+ *  Código 44:      SysTick en modo multi-shot (modular)
+ *  Descripción:    Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo con una
+ *                  frecuencia de 1Hz, empleando el SysTick en modo multi-shot.
  * 
- * Archivo:     Archivo de cabecera del módulo GPIO
+ *  Archivo:        Archivo de cabecera del módulo GPIO
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
@@ -22,24 +22,24 @@
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include <stdint.h>                                                                                 /*  Tipos enteros con tamaños fijos */
 
 
 /**************************************************************************************************
- * Definiciones y macros
- * General-Purpose Input/Output (GPIO) registers                                                        pp757   Register map
+ *  Definiciones y macros
+ *  General-Purpose Input/Output (GPIO) registers                                                       pp.757      Register map
  */
-    /*  GPIO Port N (PortN) */
-#define GPIO_PORTN_DATA_R           (*((volatile uint32_t *)0x40064008))                            /*  pp759   GPIO Data >> PortN[1] unmasked */
-#define GPIO_PORTN_DIR_R            (*((volatile uint32_t *)0x40064400))                            /*  pp760   GPIO Direction */
-#define GPIO_PORTN_DEN_R            (*((volatile uint32_t *)0x4006451C))                            /*  pp781   GPIO Digital Enable */
+    /** GPIO Port N (PortN) */
+#define GPIO_PORTN_DATA_R           (*((volatile uint32_t *)0x40064008))                            /*  pp.759      GPIO Data >> PortN[1] unmasked */
+#define GPIO_PORTN_DIR_R            (*((volatile uint32_t *)0x40064400))                            /*  pp.760      GPIO Direction */
+#define GPIO_PORTN_DEN_R            (*((volatile uint32_t *)0x4006451C))                            /*  pp.781      GPIO Digital Enable */
 
 
 /**************************************************************************************************
- * Prototipos de funciones
+ *  Prototipos de funciones
  */
 
 void GPIO_PortN_Init();                                                                             /*  Inicialización y configuración del puerto GPIO N */

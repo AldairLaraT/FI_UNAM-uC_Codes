@@ -1,19 +1,19 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       01 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          01 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 46:   Control de un LED con un SW de usuario con interrupción (modular)
- * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo,
- *              dependiendo del botón SW1, empleando interrupciones.
+ *  Tema 09:        Periféricos
+ *  Código 46:      Control de un LED con un SW de usuario con interrupción (modular)
+ *  Descripción:    Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo,
+ *                  dependiendo del botón SW1, empleando interrupciones.
  * 
- * Archivo:     Archivo de cabecera del módulo SYSCTL
+ *  Archivo:        Archivo de cabecera del módulo SYSCTL
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
@@ -22,22 +22,22 @@
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include <stdint.h>                                                                                 /*  Tipos enteros con tamaños fijos */
 
 
 /**************************************************************************************************
- * Definiciones y macros
- * System Control (SYSCTL) registers                                                                    pp247   Register map
+ *  Definiciones y macros
+ *  System Control (SYSCTL) registers                                                                   pp.247      Register map
  */
-#define SYSCTL_RCGCGPIO_R           (*((volatile uint32_t *)0x400FE608))                            /*  pp382   GPIO Run Mode Clock Gating Control */
-#define SYSCTL_PRGPIO_R             (*((volatile uint32_t *)0x400FEA08))                            /*  pp499   GPIO Peripheral Ready */
+#define SYSCTL_RCGCGPIO_R           (*((volatile uint32_t *)0x400FE608))                            /*  pp.382      GPIO Run Mode Clock Gating Control */
+#define SYSCTL_PRGPIO_R             (*((volatile uint32_t *)0x400FEA08))                            /*  pp.499      GPIO Peripheral Ready */
 
 
 /**************************************************************************************************
- * Prototipos de funciones
+ *  Prototipos de funciones
  */
 
 

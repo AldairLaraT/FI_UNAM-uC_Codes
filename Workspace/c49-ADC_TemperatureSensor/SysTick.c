@@ -1,46 +1,46 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       04 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          04 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 49:   Convertidor analógico digital (ADC): Sensor de temperatura embebido
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
- *              muestras SS_3 para leer el valor del sensor de temperatura embebido en el
- *              microcontrolador y usar los LED de usuario de la tarjeta de desarrollo como
- *              indicador de la temperatura.
+ *  Tema 09:        Periféricos
+ *  Código 49:      Convertidor analógico digital (ADC): Sensor de temperatura embebido
+ *  Descripción:    Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
+ *                  de muestras SS_3 para leer el valor del sensor de temperatura embebido en el
+ *                  microcontrolador y usar los LED de usuario de la tarjeta de desarrollo como
+ *                  indicador de la temperatura.
  * 
- * Archivo:     Archivo fuente del módulo SysTick
+ *  Archivo:        Archivo fuente del módulo SysTick
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include "SysTick.h"                                                                                /*  Archivo de cabecera del módulo SysTick */
 
 
 /**************************************************************************************************
- * Variables externas (parámetros)
+ *  Variables externas (parámetros)
  */
 
 
 /**************************************************************************************************
- * Funciones
+ *  Funciones
  */
 
 /************************************************
- * Función:     SysTick_Init
+ *  Función:        SysTick_Init
  * 
- * Descripción: Inicialización y configuración del SysTick.
+ *  Descripción:    Inicialización y configuración del SysTick.
  * 
- * Parámetros:
+ *  Parámetros:
  *      SysTick_Reload  : Valor de carga/inicio del SysTick (ST_RELOAD)
  */
 

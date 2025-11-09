@@ -1,26 +1,26 @@
 /**************************************************************************************************
- * Universidad Nacional Autónoma de México (UNAM)
- * Facultad de Ingeniería | Departamento de Electrónica
+ *  Universidad Nacional Autónoma de México (UNAM)
+ *  Facultad de Ingeniería | Departamento de Electrónica
  * 
- * Asignatura:  Microprocesadores y Microcontroladores
- * Profesor:    M.I. Christo Aldair Lara Tenorio
- * Fecha:       04 de noviembre de 2025
+ *  Asignatura:     Microprocesadores y Microcontroladores
+ *  Profesor:       M.I. Christo Aldair Lara Tenorio
+ *  Fecha:          04 de noviembre de 2025
  * 
- * Tema 09:     Periféricos
- * Código 48:   Convertidor analógico digital (ADC)
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
- *              muestras SS_3 para leer el valor de un potenciómetro conectado en la entrada
- *              analógica AIN_10 (PB4) y usar los LED de usuario de la tarjeta de desarrollo como
- *              indicador del nivel de voltaje.
+ *  Tema 09:        Periféricos
+ *  Código 48:      Convertidor analógico digital (ADC)
+ *  Descripción:    Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
+ *                  de muestras SS_3 para leer el valor de un potenciómetro conectado en la entrada
+ *                  analógica AIN_10 (PB4) y usar los LED de usuario de la tarjeta de desarrollo
+ *                  como indicador del nivel de voltaje.
  * 
- * Archivo:     Archivo fuente del módulo ADC
+ *  Archivo:        Archivo fuente del módulo ADC
  * 
- * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
+ *  Tarjeta de desarrollo:  EK-TM4C1294XL Evaluation board
  ***********************************************/
 
 
 /**************************************************************************************************
- * Archivos de cabecera
+ *  Archivos de cabecera
  */
 
 #include "ADC.h"                                                                                    /*  Archivo de cabecera del módulo ADC */
@@ -29,18 +29,18 @@
 
 
 /**************************************************************************************************
- * Variables externas (parámetros)
+ *  Variables externas (parámetros)
  */
 
 
 /**************************************************************************************************
- * Funciones
+ *  Funciones
  */
 
 /************************************************
- * Función:     ADC0_SS3_Init
+ *  Función:        ADC0_SS3_Init
  * 
- * Descripción: Inicialización y configuración del ADC_0, SS_3.
+ *  Descripción:    Inicialización y configuración del ADC_0, SS_3.
  */
 
 void ADC0_SS3_Init(void) {
@@ -86,11 +86,14 @@ void ADC0_SS3_Init(void) {
 
     /** 5.  Para cada muestra en el SS, configurar los bits de control correspondientes, asegurando
      *      que el bit END de la última muestra esté habilitado. */
-    ADC0_SSCTL3_R = (ADC0_SSCTL3_R & ~0xF) |
-                    ((0 << 3) |                                                                     /*  ADC0 => SS3 TS0: 1st Sample Temp Sensor Select -> Analog input specified by the ADCSSMUXn register */
-                     (1 << 2) |                                                                     /*  ADC0 => SS3 IE0: Sample Interrupt Enable -> Raw interrupt signal is asserted at the end of this sample´s conversion */
-                     (1 << 1) |                                                                     /*  ADC0 => SS3 END0: End of Sequence -> This is the end of sequence */
-                     (0 << 0));                                                                     /*  ADC0 => SS3 D0: Sample Differential Input Select -> The analog inputs are not differentially sampled */
+    ADC0_SSCTL3_R = (ADC0_SSCTL3_R & ~0xF) | (0x6 << 0);
+        /** (ADC0_SSCTL3_R & ~0xF)      ->  Máscara para limpiar los campos relacionados a la primer muestra.
+         *  (0x6 << 0)      Campos relacionados a la primera muestra:
+         *      TS0  = 0    ->  ADC0 => SS3 TS0: 1st Sample Temp Sensor Select -> Analog input specified by the ADCSSMUXn register
+         *      IE0  = 1    ->  ADC0 => SS3 IE0: Sample Interrupt Enable -> Raw interrupt signal is asserted at the end of this sample´s conversion
+         *      END0 = 1    ->  ADC0 => SS3 END0: End of Sequence -> This is the end of sequence
+         *      D0   = 0    ->  ADC0 => SS3 D0: Sample Differential Input Select -> The analog inputs are not differentially sampled
+         */
 
     /** 6.  Si se utiliza interrupción, desenmascarar la interrupción local. */
 
@@ -99,8 +102,8 @@ void ADC0_SS3_Init(void) {
 
     /********************************************
      *  Habilitación del PLL
-     *  NOTA: Si se utiliza el PIOSC de 16MHz como fuente de reloj, es necesario habilitar y 
-     *        deshabilitar el PLL.
+     *  NOTA:   Si se utiliza el PIOSC de 16MHz como fuente de reloj, es necesario habilitar y
+     *          deshabilitar el PLL.
      */
 
     /** 1.  Habilitar el PLL y esperar a que esté retroalimentado. */
