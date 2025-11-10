@@ -57,7 +57,7 @@ int main(void) {
 
         // while (!(NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)) {}                                           /*  SysTick => COUNT: Count Flag -> The SysTick timer has counted to 0 */
 
-        /** Generar el evento de disparo para iniciar el muestro de la señal. */
+        /** Generar el evento de disparo para iniciar el muestreo de la señal. */
         ADC0_PSSI_R |= 0x08;                                                                        /*  ADC0 => SS3: SS3 Initiate -> Begin sampling on SS3 */
 
         /** Esperar a que termine la conversión de la señal. */

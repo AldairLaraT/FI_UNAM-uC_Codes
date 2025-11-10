@@ -59,7 +59,7 @@ int main(void) {
 
     while (1) {
 
-        /** Generar el evento de disparo para iniciar el muestro de la señal. */
+        /** Generar el evento de disparo para iniciar el muestreo de la señal. */
         ADC0_PSSI_R |= 0x02;                                                                        /*  ADC0 => SS1: SS1 Initiate -> Begin sampling on SS1 */
 
         /** Esperar a que termine la conversión de la señal. */

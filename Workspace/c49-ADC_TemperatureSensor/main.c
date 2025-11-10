@@ -58,7 +58,7 @@ int main(void) {
 
         while (!(NVIC_ST_CTRL_R & NVIC_ST_CTRL_COUNT)) {}                                           /*  SysTick => COUNT: Count Flag -> The SysTick timer has counted to 0 */
 
-        /** Generar el evento de disparo para iniciar el muestro de la señal. */
+        /** Generar el evento de disparo para iniciar el muestreo de la señal. */
         ADC0_PSSI_R |= 0x08;                                                                        /*  ADC0 => SS3: SS3 Initiate -> Begin sampling on SS3 */
 
         /** Esperar a que termine la conversión de la señal. */
@@ -70,6 +70,7 @@ int main(void) {
         /** Limpiar la bandera de estado de interrupción cruda. */
         ADC0_ISC_R |= 0x08;                                                                         /*  ADC0 => IN3: SS3 Interrupt Status and Clear -> IN3 bit (ADC0_ISC_R) and INR3 bit (ADC0_RIS_R) cleared */
 
+        /** Convertir los datos crudos en °C. */
         temperature = 147.5 - ((75 * (3.3 - 0) * temperature_RawData) / 4096);                      /*  pp.1068     Raw data conversion to °C */
 
         if (temperature < temp_limit1) {

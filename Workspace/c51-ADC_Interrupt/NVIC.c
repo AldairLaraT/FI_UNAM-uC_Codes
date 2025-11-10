@@ -59,7 +59,7 @@ void ADC0_SS1_Handler(void) {
     ADC0_SS1_AIN10 = (ADC0_SSFIFO1_R & 0x0FFF);                                                     /*  ADC0 SS1 => DATA: Conversion Result Data (1st sample) */
     ADC0_SS1_AIN17 = (ADC0_SSFIFO1_R & 0x0FFF);                                                     /*  ADC0 SS1 => DATA: Conversion Result Data (2nd sample) */
 
-    /** Generar el evento de disparo para iniciar el muestro de la señal. */
+    /** Generar el evento de disparo para iniciar el muestreo de la señal. */
     ADC0_PSSI_R |= 0x02;                                                                            /*  ADC0 => SS1: SS1 Initiate -> Begin sampling on SS1 */
 
 }
