@@ -131,3 +131,9 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c49`  | Convertidor analógico digital (ADC): Sensor de temperatura                           | `C`      | `T09` Periféricos                                              |
 | `c50`  | Convertidor analógico digital (ADC): Multicanal                                      | `C`      | `T09` Periféricos                                              |
 | `c51`  | Convertidor analógico digital (ADC): Interrupción                                    | `C`      | `T09` Periféricos                                              |
+| `c52`  | Módulo temporizador de propósito general (GPTM): One-shot                            | `C`      | `T09` Periféricos                                              |
+| `c53`  | Módulo temporizador de propósito general (GPTM): One-shot, empleando interrupciones  | `C`      | `T09` Periféricos                                              |
+<!-- | `c54`  | Módulo temporizador de propósito general (GPTM): Periodic                            | `C`      | `T09` Periféricos                                              | -->
+<!-- | `c55`  | Módulo temporizador de propósito general (GPTM): PWM                                 | `C`      | `T09` Periféricos                                              | -->
+<!-- c54    ->  GPTM: Periodic con interrupción -->
+<!-- c55    ->  GPTM: PWM -->
