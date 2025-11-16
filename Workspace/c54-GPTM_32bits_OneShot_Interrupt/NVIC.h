@@ -37,7 +37,6 @@
 #define NVIC_EN0_R                  (*((volatile uint32_t *)0xE000E100))                            /*  pp.154      Interrupt 0-31 Set Enable */
 #define NVIC_EN1_R                  (*((volatile uint32_t *)0xE000E104))                            /*  pp.154      Interrupt 32-63 Set Enable */
 #define NVIC_PRI4_R                 (*((volatile uint32_t *)0xE000E410))                            /*  pp.159      Interrupt 16-19 Priority */
-#define NVIC_PRI5_R                 (*((volatile uint32_t *)0xE000E414))                            /*  pp.159      Interrupt 20-23 Priority */
 #define NVIC_PRI12_R                (*((volatile uint32_t *)0xE000E430))                            /*  pp.159      Interrupt 48-51 Priority */
 
 
