@@ -73,7 +73,7 @@ void GPIO_PortJ_Handler(void) {
     /** Confirmar qué botón se presionó. */
     if (!(GPIO_PORTJ_AHB_DATA_R & 0x01)) {                                                          /*  IF (SW1 -> on) */
 
-        /** 7.  Habilitar el temporizador y que comience con la cuenta. */
+        /** 7.  Habilitar el temporizador para que comience con la cuenta. */
         TIMER0_CTL_R |= 0x01;                                                                       /*  GPTM0 => TAEN: GPTM Timer A Enable -> Enabled and begins counting */
     }
 
