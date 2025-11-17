@@ -46,8 +46,8 @@
 void GPTM0A_OneShot_Init(uint16_t LoadValue, uint8_t PrescalerValue) {
 
     /**     Habilitar la señal de reloj del GPTM y esperar a que se estabilice el reloj. */
-    SYSCTL_RCGCTIMER_R |= 0x01;                                                                     /*  R0: GPTM0 Run Mode Clock Gating Control -> Enabled */
-    while (!(SYSCTL_PRTIMER_R & 0x01)) {}                                                           /*  R0: GPTM0 Peripheral Ready -> GPIO PortJ is ready for access */
+    SYSCTL_RCGCTIMER_R |= 0x01;                                                                     /*  R0: 16/32-Bit GPTM0 Run Mode Clock Gating Control -> Enabled */
+    while (!(SYSCTL_PRTIMER_R & 0x01)) {}                                                           /*  R0: 16/32-Bit GPTM0 Peripheral Ready -> 16/32-Bit GPTM2 is ready for access */
 
     /** 1.  Asegurar que el GPTM está deshabilitado. */
     TIMER0_CTL_R &= ~0x01;                                                                          /*  GPTM0 => TAEN: GPTM Timer A Enable -> Disabled */
