@@ -95,7 +95,7 @@ void GPTM2A_PWM_Init(uint32_t LoadValue, uint32_t MatchValue) {
     /** 5.  Si se utiliza el preescalador, cargar los bits [23:16] del valor inicial del GPTM. */
     TIMER2_TAPR_R = (LoadValue & 0x00FF0000) >> 16;                                                 /*  GPTM2 => TAPSR: GPTM Timer A Prescale -> Loads the prescaler for Timer A */
 
-    /** 6.  Si se utiliza interrupción, configurar la condición de interrupción. */
+    /** 6.  Si se utiliza interrupción, configurar la condición de interrupción y habilitarla. */
 
     /** 7.  Cargar los bits [15:0] del valor inicial del GPTM. */
     TIMER2_TAILR_R = (LoadValue & 0xFFFF);                                                          /*  GPTM2 => TAILR: GPTM Timer A Interval Load Register -> Loads the counter for Timer A */
