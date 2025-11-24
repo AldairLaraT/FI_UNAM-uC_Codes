@@ -136,3 +136,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c54`  | Módulo temporizador de propósito general (GPTM): 32bits, one-shot, interrupción      | `C`      | `T09` Periféricos                                              |
 | `c55`  | Módulo temporizador de propósito general (GPTM): 32bits, periodic, interrupción      | `C`      | `T09` Periféricos                                              |
 | `c56`  | Módulo temporizador de propósito general (GPTM): Pulse Width Modulation (PWM)        | `C`      | `T09` Periféricos                                              |
+| `c57`  | Universal Asynchronous Receiver/Transmitter (UART)                                   | `C`      | `T09` Periféricos                                              |

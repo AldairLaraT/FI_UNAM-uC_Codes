@@ -61,7 +61,7 @@ void GPTM2A_PWM_Init(uint32_t LoadValue, uint32_t MatchValue) {
     GPIO_PORTM_AFSEL_R |= 0x01;                                                                     /*  PortM[0] => AFSEL: GPIO Alternate Function Select -> Alternate hardware function */
 
     /**     Seleccionar las funciones alternas de hardware del pin del puerto GPIO. */
-    GPIO_PORTM_PCTL_R = (GPIO_PORTM_PCTL_R & ~0xFFFFFFFF) | (3 << 0);                               /*  PortM[0] => PMC0: Port Mux Control 0 -> T2CCP0 */
+    GPIO_PORTM_PCTL_R = (GPIO_PORTM_PCTL_R & ~0x0000000F) | (3 << 0);                               /*  PortM[0] => PMC0: Port Mux Control 0 -> T2CCP0 */
 
     /**     Habilitar las funciones digitales del pin del puerto GPIO. */
     GPIO_PORTM_DEN_R |= 0x01;                                                                       /*  PortM[0] => DEN: Digital Enable -> Enabled */
