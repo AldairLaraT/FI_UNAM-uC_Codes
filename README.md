@@ -55,18 +55,16 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 **Cubículo:** Laboratorio de Instrumentación Electrónica de Sistemas Espaciales (LIESE), 2do piso del edificio P, Conjunto Sur de la Facultad de Ingeniería, UNAM.
 
 **Horario:**
-| Horario         |    Lunes     | Martes  |  Miércoles   |    Jueves    | Viernes  |
-|:---------------:|:------------:|:-------:|:------------:|:------------:|:--------:|
-| 11:00h - 12:00h | -            | -       | -            | -            | -        |
-| 12:00h - 13:00h | LIESE        | Reunión | Reunión      | LIESE        | Variable |
-| 13:00h - 14:00h | Reunión      | LIESE   | LIESE        | Clase (Q106) | Variable |
-| 14:00h - 15:00h | Reunión      | LIESE   | LIESE        | Clase (Q106) | Variable |
-| 15:00h - 16:00h | -            | -       | -            | -            | -        |
-| 16:00h - 17:00h | LIESE        | Reunión | LIESE        | LIESE        | Reunión  |
-| 17:00h - 18:00h | Clase (Q102) | LIESE   | Clase (Q102) | LIESE        | Variable |
-| 18:00h - 19:00h | Clase (Q102) | Reunión | Clase (Q102) | LIESE        | Variable |
-| 19:00h - 20:00h | LIESE        | LIESE   | LIESE        | LIESE        | Variable |
-| 20:00h - 21:00h | -            | -       | -            | -            | -        |
+
+|     Horario     |    Lunes     |   Martes     |  Miércoles   |    Jueves    | Viernes  |
+|:---------------:|:------------:|:------------:|:------------:|:------------:|:--------:|
+| 14:00h - 15:00h | -            | -            | -            | -            | -        |
+| 15:00h - 16:00h | LIESE        | -            | LIESE        | -            | -        |
+| 16:00h - 17:00h | LIESE        | -            | LIESE        | -            | -        |
+| 17:00h - 18:00h | Clase (Q102) | Clase (U303) | Clase (Q102) | Clase (U303) | -        |
+| 18:00h - 19:00h | Clase (Q102) | Clase (U303) | Clase (Q102) | Clase (U303) | -        |
+| 19:00h - 20:00h | LIESE        | LIESE        | LIESE        | LIESE        | -        |
+| 20:00h - 21:00h | -            | -            | -            | -            | -        |
 
 ---
 # Requisitos del curso
