@@ -37,8 +37,8 @@
 
 uint8_t pot_select = 0;                                                                             /*  Selección del potenciómetro */
 uint16_t LED_control_value;                                                                         /*  Valor del potenciómetro que controla los LED de usuario */
-uint16_t ADC0_SS1_AIN10;                                                                            /*  Voltaje en la entrada analógica 10 (AIN_10, ADC_0, primera muestra del SS_1) */
-uint16_t ADC0_SS1_AIN17;                                                                            /*  Voltaje en la entrada analógica 17 (AIN_17, ADC_0, segunda muestra del SS_1) */
+uint16_t ADC0_SS1_AIN10;                                                                            /*  Resultado de la conversión del voltaje en la entrada analógica 10 (AIN_10, ADC_0, primera muestra del SS_1) */
+uint16_t ADC0_SS1_AIN17;                                                                            /*  Resultado de la conversión del voltaje en la entrada analógica 17 (AIN_17, ADC_0, segunda muestra del SS_1) */
 uint32_t Bounce_Delay = 200000;                                                                     /*  Valor de carga del SysTick para un retardo de rebote de 50ms (f = 4MHz) */
 
 
