@@ -11,7 +11,7 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 ---
 # Contenido
 - Códigos de ejemplo y ejercicios relacionados con la asignatura.
-- [Manuales, presentaciones y material del curso](MATERIAL.md).
+- [Guías de instalación, manuales técnicos y presentaciones del curso](MATERIAL.md).
 
 ---
 # Importar el repositorio en Code Composer Studio
