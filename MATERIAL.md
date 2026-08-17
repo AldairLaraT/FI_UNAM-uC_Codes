@@ -3,6 +3,7 @@
 - [Manuales técnicos](https://github.com/AldairLaraT/FI_UNAM-uC_Codes/releases/tag/Manuales-v1)
 
 # Presentaciones del curso
+- [2027-1](https://github.com/AldairLaraT/FI_UNAM-uC_Codes/releases/tag/Presentaciones-v2027-1)
 - [2026-2](https://github.com/AldairLaraT/FI_UNAM-uC_Codes/releases/tag/Presentaciones-v2026-2)
 - [2026-1](https://github.com/AldairLaraT/FI_UNAM-uC_Codes/releases/tag/Presentaciones-v2026-1)
 - [2025-2](https://github.com/AldairLaraT/FI_UNAM-uC_Codes/releases/tag/Presentaciones-v2025-2)
