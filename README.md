@@ -61,10 +61,10 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | 14:00h - 15:00h | -            | -            | -            | -            | -        |
 | 15:00h - 16:00h | LIESE        | -            | LIESE        | -            | -        |
 | 16:00h - 17:00h | LIESE        | -            | LIESE        | -            | -        |
-| 17:00h - 18:00h | Clase (Q102) | Clase (U303) | Clase (Q102) | Clase (U303) | -        |
-| 18:00h - 19:00h | Clase (Q102) | Clase (U303) | Clase (Q102) | Clase (U303) | -        |
-| 19:00h - 20:00h | LIESE        | LIESE        | LIESE        | LIESE        | -        |
-| 20:00h - 21:00h | -            | -            | -            | -            | -        |
+| 17:00h - 18:00h | Clase (Q102) | LIESE        | Clase (Q102) | LIESE        | -        |
+| 18:00h - 19:00h | Clase (Q102) | LIESE        | Clase (Q102) | LIESE        | -        |
+| 19:00h - 20:00h | LIESE        | Clase (A401) | LIESE        | Clase (Y102) | -        |
+| 20:00h - 21:00h | -            | Clase (A401) | -            | Clase (Y102) | -        |
 
 ---
 # Requisitos del curso
