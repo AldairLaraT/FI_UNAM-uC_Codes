@@ -82,11 +82,10 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c02`  | Instrucciones básicas del ARM Cortex-M: ADD                                          | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
 | `c03`  | Instrucciones básicas del ARM Cortex-M: LDR                                          | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
 | `c04`  | Instrucciones básicas del ARM Cortex-M: B                                            | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c05`  | Tarea 3: Código básico en lenguaje ensamblador                                       | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria                        | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da                     | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división               | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
-| `c09`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control                         | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c05`  | Instrucciones del procesador ARM Cortex-M4F: Acceso a memoria                        | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c06`  | Instrucciones del procesador ARM Cortex-M4F: Procesamiento de da                     | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c07`  | Instrucciones del procesador ARM Cortex-M4F: Multiplicación y división               | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
+| `c08`  | Instrucciones del procesador ARM Cortex-M4F: Salto y control                         | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
 | `c10`  | Programa fuente vs programa objeto                                                   | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
 | `c11`  | Programa en lenguaje ensamblador                                                     | `asm`    | `T04` Lenguaje ensamblador y el ensamblador                    |
 | `c12`  | Estructuras de control: IF                                                           | `asm`    | `T05` Programación estructurada en lenguaje ensamblador        |
@@ -136,3 +135,4 @@ Estudiantes de la Facultad de Ingeniería, UNAM, que cursan las carreras de:
 | `c56`  | Módulo temporizador de propósito general (GPTM): Pulse Width Modulation (PWM)        | `C`      | `T09` Periféricos                                              |
 | `c57`  | Universal Asynchronous Receiver/Transmitter (UART)                                   | `C`      | `T09` Periféricos                                              |
 | `c58`  | Inter-Integrated Circuit (I2C)                                                       | `C`      | `T09` Periféricos                                              |
+| `T03`  | Tarea 03: Código básico en lenguaje ensamblador                                      | `asm`    | `T03` Modos de direccionamiento y conjunto de instrucciones    |
