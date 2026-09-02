@@ -1,15 +1,15 @@
 ; *************************************************************************************************
 ; Universidad Nacional Autónoma de México (UNAM)
 ; Facultad de Ingeniería | Departamento de Electrónica
-; 
+;
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
 ; Fecha:        31 de agosto de 2025
-; 
+;
 ; Tema 03:      Modos de direccionamiento y conjunto de instrucciones
-; Código 09:    Instrucciones del procesador ARM Cortex-M4F | Salto y control
+; Código 08:    Instrucciones del procesador ARM Cortex-M4F | Salto y control
 ; Descripción:  Uso de las instrucciones de salto y control del ARM Cortex-M4F.
-; 
+;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
 
@@ -25,7 +25,7 @@
 ; Subrutinas
 
 twos_complement:
-        MVN   R0, R0                            ; R0 = not R0
+        MVN   R0, R0                            ; R0 = not(R0)
         ADD   R0, #1                            ; R0 = R0 + 1
 
         BX    LR                                ; Salto indirecto a LR (link register)
@@ -55,7 +55,7 @@ main:
         BL    twos_complement                   ; Salto con liga hacía twos_complement
 
         MOV   R0, #0                            ; R0 = 0
-        MOV   R1, #0x20000000                   ; R1 = 0x2000.0000
+        MOV   R1, #0x20000000                   ; R1 = 0x2000_0000
         MOV   R2, #5                            ; R2 = 5
         BL    add_array                         ; Salto con liga a add_array
 
@@ -63,7 +63,7 @@ main:
         MOV   R2, #3                            ; R2 = 3
 
         MOV   R5, #0x0212                       ; R5 = 0x0212
-        ORR   R5, #1                            ; R5 = 1
+        ORR   R5, #1                            ; R5[0] = 1
         BLX   R5                                ; Salto indirecto con liga a R5
 
     ; IT (If-Then)

@@ -1,15 +1,15 @@
 ; *************************************************************************************************
 ; Universidad Nacional Autónoma de México (UNAM)
 ; Facultad de Ingeniería | Departamento de Electrónica
-; 
+;
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
 ; Fecha:        31 de agosto de 2025
-; 
+;
 ; Tema 03:      Modos de direccionamiento y conjunto de instrucciones
-; Código 08:    Instrucciones del procesador ARM Cortex-M4F | Multiplicación y división
+; Código 07:    Instrucciones del procesador ARM Cortex-M4F | Multiplicación y división
 ; Descripción:  Uso de las instrucciones de multiplicación y división del ARM Cortex-M4F.
-; 
+;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
 
@@ -28,9 +28,9 @@ main:
         ;          3E8 |           1,000
         ;         1388 |           5,000
         ;         157C |           5,500
-        ;    3B9A.CA00 |   1,000,000,000
-        ;    FFFF.FFFF |   4,294,967,295
-        ; 74.6A52.8800 | 500,000,000,000
+        ;    3B9A_CA00 |   1,000,000,000
+        ;    FFFF_FFFF |   4,294,967,295
+        ; 74_6A52_8800 | 500,000,000,000
 
         MOV   R0, #5                            ; R0 = 5
         MOV   R1, #500                          ; R1 = 500
@@ -62,8 +62,8 @@ main:
         ; ------------+----------------+-----------
         ;         1F4 |            500 | +   500
         ;        157C |          5,500 | + 5,500
-        ;   FFFF.EA84 |  4,294,961,796 | - 5,500
-        ;   FFFF.FE0C |  4,294,966,796 | -   500
+        ;   FFFF_EA84 |  4,294,961,796 | - 5,500
+        ;   FFFF_FE0C |  4,294,966,796 | -   500
 
         MOV   R0, #500                          ; R0 = 500
         MOV   R1, #5500                         ; R1 = 5,500

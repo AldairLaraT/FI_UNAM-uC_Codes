@@ -1,15 +1,15 @@
 ; *************************************************************************************************
 ; Universidad Nacional Autónoma de México (UNAM)
 ; Facultad de Ingeniería | Departamento de Electrónica
-; 
+;
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
 ; Fecha:        26 de agosto de 2025
-; 
+;
 ; Tema 03:      Modos de direccionamiento y conjunto de instrucciones
-; Código 07:    Instrucciones del procesador ARM Cortex-M4F | Procesamiento de datos
+; Código 06:    Instrucciones del procesador ARM Cortex-M4F | Procesamiento de datos
 ; Descripción:  Uso de las instrucciones de procesamiento de datos del ARM Cortex-M4F.
-; 
+;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; ***********************************************
 
@@ -27,11 +27,11 @@ main:
 
     ; MOV (Move)
 
-        MOV   R0, #0x20000000                   ; R0 = 0x2000.0000
+        MOV   R0, #0x20000000                   ; R0 = 0x2000_0000
 
     ; MVN (Move NOT)
 
-        MVN   R1, #0x20000000                   ; R1 = not(0x2000.0000)
+        MVN   R1, #0x20000000                   ; R1 = not(0x2000_0000)
 
     ; MOVW (Move wide)
 
@@ -41,10 +41,10 @@ main:
 
         MOVT  R2, #0x2000                       ; R2(31..16) = 0x2000
 
-        ; MOV   R3, #0x20000010
-        MOV   R3, #0x00AB00AB                   ; R3 = 0x00AB.00AB
-        MOV   R3, #0xAB00AB00                   ; R3 = 0xAB00.AB00
-        MOV   R3, #0xABABABAB                   ; R3 = 0xABAB.ABAB
+        ; MOV   R3, #0x20000010                 ; Dato no codificable por estar fuera de rango
+        MOV   R3, #0x00AB00AB                   ; R3 = 0x00AB_00AB
+        MOV   R3, #0xAB00AB00                   ; R3 = 0xAB00_AB00
+        MOV   R3, #0xABABABAB                   ; R3 = 0xABAB_ABAB
 
         MOVW  R4, #0x1234                       ; R4(15..0) = 0x1234
         MOVT  R4, #0x5678                       ; R4(31..16) = 0x5678
@@ -55,11 +55,11 @@ main:
     ; *******************************************
     ; Operaciones lógicas
 
-        MOV   R0, #0x44444444                   ; R0 = 0x4444.4444
-        MOV   R1, #0x77777777                   ; R1 = 0x7777.7777
-        MOV   R2, #0x55555555                   ; R2 = 0x5555.5555
-        MOV   R3, #0xAAAAAAAA                   ; R3 = 0xAAAA.AAAA
-        MOV   R4, #0xFFFFFFFF                   ; R4 = 0xFFFF.FFFF
+        MOV   R0, #0x44444444                   ; R0 = 0x4444_4444
+        MOV   R1, #0x77777777                   ; R1 = 0x7777_7777
+        MOV   R2, #0x55555555                   ; R2 = 0x5555_5555
+        MOV   R3, #0xAAAAAAAA                   ; R3 = 0xAAAA_AAAA
+        MOV   R4, #0xFFFFFFFF                   ; R4 = 0xFFFF_FFFF
 
     ; AND (Logical AND)
 
@@ -69,8 +69,8 @@ main:
 
     ; ORR (Logical OR)
 
-        ORR   R7, R0, #0x80000000               ; R7 = R0 or 0x8000.0000
-        ORRS  R8, R0, #0x80000000               ; R8 = R0 or 0x8000.0000, actualizar APSR
+        ORR   R7, R0, #0x80000000               ; R7 = R0 or 0x8000_0000
+        ORRS  R8, R0, #0x80000000               ; R8 = R0 or 0x8000_0000, actualizar APSR
 
     ; EOR (Exclusive OR)
 
@@ -82,7 +82,7 @@ main:
 
     ; BIC (Bit clear)
 
-        BIC   R1, #0xFF                         ; Limpiar bits [7..0] de R1
+        BIC   R1, #0xFF                         ; R1 = R1 and not(0xFF) (Limpiar bits (7..0) de R1)
 
     ; *******************************************
     ; Operaciones de desplazamiento y rotación
@@ -120,7 +120,7 @@ main:
     ; *******************************************
     ; Operaciones aritméticas
 
-        MOV   R0, #0xFFFFFFFF                   ; R0 = 0xFFFF.FFFF
+        MOV   R0, #0xFFFFFFFF                   ; R0 = 0xFFFF_FFFF
         MOV   R1, #1                            ; R1 = 1
         MOV   R2, #2                            ; R2 = 2
         MOV   R3, #10                           ; R3 = 10
