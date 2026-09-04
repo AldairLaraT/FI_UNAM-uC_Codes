@@ -26,5 +26,7 @@ main:
         LDR     R3, [R0, #8]!                   ; R3 = [R0 + 8] = [0x2000_0008]     R0 = 0x2000_0008
         LDR     R4, [R0], #4                    ; R4 = [R0]     = [0x2000_0008]     R0 = 0x2000_000C
 
-end     B       end
+
+halt    B       halt
+
         .end
