@@ -27,5 +27,7 @@ loop    LDR     R2, [R1], #4                    ; R2 = [R1]
         ADD     R0, R0, R2                      ; R0 = R0 + R2
         B       loop                            ; Saltar a la etiqueta loop
 
-end     B       end
+
+halt    B       halt
+
         .end
