@@ -25,5 +25,7 @@ main:
         ADD     R2, R1, R0                      ; R2 = R1 + R0 = 128 + 100 = 228
         ADD     R3, R2, #0x03FF                 ; R3 = R2 + 0x03FF = 228 + 0x03FF = 1251
 
-end     B       end
+
+halt    B       halt
+
         .end
