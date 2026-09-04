@@ -26,5 +26,7 @@ main:
         MOV     R3, #65535                      ; R3 = 65,535
         MOV     R4, #0xF41A                     ; R4 = 0xF41A = 62,490
 
-end     B       end
+
+halt    B       halt
+
         .end
