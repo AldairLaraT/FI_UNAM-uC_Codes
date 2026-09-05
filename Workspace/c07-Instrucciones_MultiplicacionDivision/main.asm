@@ -1,4 +1,4 @@
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Universidad Nacional Autónoma de México (UNAM)
 ; Facultad de Ingeniería | Departamento de Electrónica
 ;
@@ -11,76 +11,101 @@
 ; Descripción:  Uso de las instrucciones de multiplicación y división del ARM Cortex-M4F.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .global main
 
 
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Sección de código ejecutable
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
 main:
 
-        ;  Hexadecimal |     Decimal
-        ; -------------+-----------------
-        ;          1F4 |             500
-        ;          3E8 |           1,000
-        ;         1388 |           5,000
-        ;         157C |           5,500
-        ;    3B9A_CA00 |   1,000,000,000
-        ;    FFFF_FFFF |   4,294,967,295
-        ; 74_6A52_8800 | 500,000,000,000
+    ; -----------------------------------------
+    ; Multiplicación
+    ; -----------------------------------------
 
-        MOV   R0, #5                            ; R0 = 5
-        MOV   R1, #500                          ; R1 = 500
-        MOV   R2, #1000                         ; R2 = 1000
-        MOVW  R3, #0xCA00
-        MOVT  R3, #0x3B9A                       ; R3 = 1,000,000,000
+    ; ----------------------------------------- ;
+    ; ----------- Valores de prueba ----------- ;
+    ; --------------------+-------------------- ;
+    ;     Hexadecimal     |      Decimal        ;
+    ; --------------------+-------------------- ;
+    ;                 1F4 |                500  ;
+    ;                 3E8 |              1,000  ;
+    ;                1388 |              5,000  ;
+    ;                157C |              5,500  ;
+    ;           3B9A_CA00 |      1,000,000,000  ;
+    ;           FFFF_FFFF |      4,294,967,295  ;
+    ;        74_6A52_8800 |    500,000,000,000  ;
+    ; --------------------+-------------------- ;
 
-    ; MUL (Multiply)
+        MOV     R0, #5                          ; R0 = 5
+        MOV     R1, #500                        ; R1 = 500
+        MOV     R2, #1000                       ; R2 = 1000
+        MOVW    R3, #0xCA00
+        MOVT    R3, #0x3B9A                     ; R3 = 1,000,000,000
 
-        MUL   R4, R0, R2                        ; R4 = R0 * R2
-        MUL   R5, R1, R3                        ; R5 = R1 * R3
 
-    ; MLA (Multiply with accumulate)
+    ; --- MUL (Multiply) ----------------------
 
-        MLA   R6, R0, R2, R1                    ; R6 = (R0 * R2) + R1
+        MUL     R4, R0, R2                      ; R4 = R0 * R2
+        MUL     R5, R1, R3                      ; R5 = R1 * R3
 
-    ; MLS (Multiply and subtract)
 
-        MLS   R7, R0, R2, R6                    ; R7 = R6 - (R0 * R2)
+    ; --- MLA (Multiply with accumulate) ------
 
-    ; UMULL (Unsigned multiply, 64-bit)
+        MLA     R6, R0, R2, R1                  ; R6 = (R0 * R2) + R1
 
-        UMULL R8, R9, R3, R1                    ; (R9, R8) = R3 * R1
 
-    ; UDIV (Unsigned divide)
+    ; --- MLS (Multiply and subtract) ---------
 
-        ; Hexadecimal |     Decimal    |  Decimal
-        ;             |  (no signado)  | (signado)
-        ; ------------+----------------+-----------
-        ;         1F4 |            500 | +   500
-        ;        157C |          5,500 | + 5,500
-        ;   FFFF_EA84 |  4,294,961,796 | - 5,500
-        ;   FFFF_FE0C |  4,294,966,796 | -   500
+        MLS     R7, R0, R2, R6                  ; R7 = R6 - (R0 * R2)
 
-        MOV   R0, #500                          ; R0 = 500
-        MOV   R1, #5500                         ; R1 = 5,500
-        MOVW  R2, #0xEA84
-        MOVT  R2, #0xFFFF                       ; R2 = 4,294,961,796 | -5,500 (signed int)
-        MOVW  R3, #0xFE0C
-        MOVT  R3, #0xFFFF                       ; R3 = 4,294,966,796 | -500 (signed int)
 
-        UDIV  R4, R1, R0                        ; R4 = R1 / R0
-        UDIV  R5, R2, R0                        ; R5 = R2 / R0
+    ; --- UMULL (Unsigned multiply, 64-bit) ---
 
-    ; SDIV (Signed divide)
+        UMULL   R8, R9, R3, R1                  ; (R9, R8) = R3 * R1
 
-        SDIV  R6, R1, R0                        ; R6 = R1 / R0 (signada)
-        SDIV  R7, R1, R3                        ; R7 = R1 / R3 (signada)
-        SDIV  R8, R2, R0                        ; R8 = R2 / R0 (signada)
-        SDIV  R9, R2, R3                        ; R9 = R2 / R3 (signada)
 
-end     B     end
+    ; -----------------------------------------
+    ; División
+    ; -----------------------------------------
+
+    ; ----------------------------------------- ;
+    ; ----------- Valores de prueba ----------- ;
+    ; -------------+----------------+---------- ;
+    ;  Hexadecimal |     Decimal    |  Decimal  ;
+    ;              |   no signado   |  signado  ;
+    ; -------------+----------------+---------- ;
+    ;          1F4 |            500 | (+)   500 ;
+    ;         157C |          5,500 | (+) 5,500 ;
+    ;    FFFF_EA84 |  4,294,961,796 | (-) 5,500 ;
+    ;    FFFF_FE0C |  4,294,966,796 | (-)   500 ;
+    ; -------------+----------------+---------- ;
+
+        MOV     R0, #500                        ; R0 = 500
+        MOV     R1, #5500                       ; R1 = 5,500
+        MOVW    R2, #0xEA84
+        MOVT    R2, #0xFFFF                     ; R2 = (int)(4,294,961,796) | (signed int)(-5,500)
+        MOVW    R3, #0xFE0C
+        MOVT    R3, #0xFFFF                     ; R3 = (int)(4,294,966,796) | (signed int)(-500)
+
+
+    ; --- UDIV (Unsigned divide) --------------
+
+        UDIV    R4, R1, R0                      ; R4 = R1 / R0
+        UDIV    R5, R2, R0                      ; R5 = R2 / R0
+
+
+    ; --- SDIV (Signed divide) ----------------
+
+        SDIV    R6, R1, R0                      ; R6 = R1 / R0 (signada)
+        SDIV    R7, R1, R3                      ; R7 = R1 / R3 (signada)
+        SDIV    R8, R2, R0                      ; R8 = R2 / R0 (signada)
+        SDIV    R9, R2, R3                      ; R9 = R2 / R3 (signada)
+
+
+halt    B       halt
+
         .end
