@@ -1,55 +1,56 @@
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Universidad Nacional Autónoma de México (UNAM)
 ; Facultad de Ingeniería | Departamento de Electrónica
-; 
+;
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
 ; Fecha:        17 de septiembre de 2025
-; 
+;
 ; Tema 05:      Programación estructurada en lenguaje ensamblador
-; Código 13:    Estructuras de control: IF-ELSE
+; Código 12:    Estructuras de control: IF-ELSE
 ; Descripción:  Construcción de la estructura de control IF-ELSE en lenguaje ensamblador.
 ;               Selección entre dos bloques de instrucciones, a partir del cumplimiento de una condición.
-; 
+;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .global main
 
 
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Sección de datos
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .data
 
 
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Sección de código ejecutable
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .text
 
 
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 ; Apuntadores
 
 
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 ; Subrutinas
 
 
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 ; Código principal
 
 main:
-        CMP   R0, #5                            ; Condición (R0 = 5)
-        BNE   else_block
+
+        CMP     R0, #5
+        BNE     else_block                      ; Condición (R0 = 5)
 
 if_block                                        ; Bloque IF
         NOP
         NOP
-        B     if_end
+        B       if_end
 
 else_block                                      ; Bloque ELSE (R0 != 5)
         NOP
@@ -59,5 +60,7 @@ if_end                                          ; Fin del bloque IF
         NOP
         NOP
 
-end     B     end
+
+halt    B       halt
+
         .end
