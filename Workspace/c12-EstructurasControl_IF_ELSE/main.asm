@@ -47,14 +47,14 @@ main:
 
     ; Condición (R0 = 5)
         CMP     R0, #5
-        BNE     else_block
+        BNE     else
 
-if_block                                        ; Bloque IF
+if_begin                                        ; IF
         NOP
         NOP
         B       if_end
 
-else_block                                      ; Bloque ELSE (R0 != 5)
+else                                            ; ELSE (R0 != 5)
         NOP
         NOP
 
