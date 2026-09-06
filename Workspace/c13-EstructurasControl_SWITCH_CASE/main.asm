@@ -45,12 +45,15 @@
 
 main:
 
+    ; Condición del case1 (R0 = 1)
         CMP     R0, #1
-        BEQ     case1                           ; Condición del case1 (R0 = 1)
+        BEQ     case1
 
+    ; Condición del case2 (R0 = 2)
         CMP     R0, #2
-        BEQ     case2                           ; Condición del case2 (R0 = 2)
+        BEQ     case2
 
+    ; Condición DEFAULT
         B       case_default
 
 case1                                           ; Bloque case1
