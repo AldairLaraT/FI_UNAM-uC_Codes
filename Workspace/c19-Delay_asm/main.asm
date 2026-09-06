@@ -109,7 +109,7 @@ Delay_for
 Delay_for_end
 
     ; Restaurar contexto (registros usados como variables locales)
-        POP     {R4}                            ; Restaurar contexto (registros usados como variables locales)
+        POP     {R4}
 
     ; Retorno de subrutina
         BX      LR
