@@ -48,7 +48,7 @@ main:
         CMP     R0, #5
         BNE     if_end
 
-if_block                                        ; Bloque IF
+if_begin                                        ; IF
         NOP
         NOP
 
