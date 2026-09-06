@@ -66,6 +66,8 @@ array   LDR     R5, [R1], #4                    ; R5 = [R1], R1 = R1 + 4
         ADD     R4, R5                          ; R4 = R4 + R5
         SUBS    R2, #1                          ; R2 = R2 - 1
         BNE     array                           ; Si (Z = 0), saltar a array
+
+    ; Retorno del resultado
         MOV     R0, R4                          ; R0 = R4
 
     ; Retorno de subrutina
@@ -116,19 +118,19 @@ main:
         ANDS    R2, R0, #0                      ; R2 = R0 and 0, actualizar APSR (Z = 1)
 
         ITT     EQ                              ; Bloque IT (Z = 1)
-        ADDEQ   R2, #1                          ; Si TRUE (Z = 1), R2 = R2 + 1
-        ADDEQ   R2, #2                          ; Si TRUE (Z = 1), R2 = R2 + 2
+        ADDEQ   R2, #1                          ; TRUE (Z = 1), R2 = R2 + 1
+        ADDEQ   R2, #2                          ; TRUE (Z = 1), R2 = R2 + 2
 
         ITTE    EQ                              ; Bloque IT (Z = 1)
-        ADDEQ   R2, #1                          ; Si TRUE (Z = 1), R2 = R2 + 1
-        ADDEQ   R2, #2                          ; Si TRUE (Z = 1), R2 = R2 + 2
-        ADDNE   R2, #3                          ; Si FALSE (Z != 1), R2 = R2 + 3
+        ADDEQ   R2, #1                          ; TRUE (Z = 1), R2 = R2 + 1
+        ADDEQ   R2, #2                          ; TRUE (Z = 1), R2 = R2 + 2
+        ADDNE   R2, #3                          ; FALSE (Z != 1), R2 = R2 + 3
 
         ITETE   EQ                              ; Bloque IT (Z = 1)
-        ADDEQ   R2, #1                          ; Si TRUE (Z = 1), R2 = R2 + 1
-        ADDNE   R2, #2                          ; Si FALSE (Z != 1), R2 = R2 + 2
-        ADDEQ   R2, #3                          ; Si TRUE (Z = 1), R2 = R2 + 3
-        ADDNE   R2, #4                          ; Si FALSE (Z != 1), R2 = R2 + 4
+        ADDEQ   R2, #1                          ; TRUE (Z = 1), R2 = R2 + 1
+        ADDNE   R2, #2                          ; FALSE (Z != 1), R2 = R2 + 2
+        ADDEQ   R2, #3                          ; TRUE (Z = 1), R2 = R2 + 3
+        ADDNE   R2, #4                          ; FALSE (Z != 1), R2 = R2 + 4
 
 
 halt    B       halt
