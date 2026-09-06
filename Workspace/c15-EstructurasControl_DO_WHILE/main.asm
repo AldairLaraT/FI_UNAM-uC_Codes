@@ -48,15 +48,15 @@ main:
         NOP
         NOP
 
-do_while_block                                  ; Bloque DO-WHILE
+do_while_begin                                  ; DO-WHILE
         NOP
         NOP
 
     ; Condición (R0 < 5)
         CMP     R0, #5
-        BMI     do_while_block
+        BMI     do_while_begin
 
-do_while_end                                    ; Fin del bloque DO-WHILE
+do_while_end                                    ; Fin de la estructura DO-WHILE
         NOP
         NOP
 

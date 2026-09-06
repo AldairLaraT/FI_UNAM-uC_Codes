@@ -52,7 +52,7 @@ if_begin                                        ; IF
         NOP
         NOP
 
-if_end                                          ; Fin del bloque IF
+if_end                                          ; Fin de la estructura IF
         NOP
         NOP
 

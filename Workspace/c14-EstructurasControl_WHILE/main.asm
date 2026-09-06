@@ -55,9 +55,10 @@ while_begin                                     ; WHILE
 
         NOP
         NOP
+
         B       while_begin
 
-while_end                                       ; Fin del bloque WHILE
+while_end                                       ; Fin de la estructura WHILE
         NOP
         NOP
 

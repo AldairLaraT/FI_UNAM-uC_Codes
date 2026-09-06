@@ -52,13 +52,14 @@ main:
 if_begin                                        ; IF
         NOP
         NOP
+
         B       if_end
 
 else                                            ; ELSE (R0 != 5)
         NOP
         NOP
 
-if_end                                          ; Fin del bloque IF
+if_end                                          ; Fin de la estructura IF-ELSE
         NOP
         NOP
 

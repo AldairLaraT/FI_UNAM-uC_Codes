@@ -59,18 +59,20 @@ main:
 case1                                           ; case1
         NOP
         NOP
-        B       switch_end
+
+        B       switch_case_end
 
 case2                                           ; case2
         NOP
         NOP
-        B       switch_end
+
+        B       switch_case_end
 
 case_default                                    ; DEFAULT
         NOP
         NOP
 
-switch_end                                      ; Fin del bloque CASE
+switch_case_end                                 ; Fin de la estructura SWITCH-CASE
         NOP
         NOP
 
