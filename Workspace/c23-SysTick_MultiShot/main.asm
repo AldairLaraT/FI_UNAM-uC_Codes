@@ -120,29 +120,27 @@ SysTick_Init:
     ; Descripción:  Esperar a que el SysTick termine de contar.
     ; Registros reservados (variables locales):
     ;   R4  : Apuntador (NVIC_ST_CTRL_R)
-    ;   R5  : Apuntador (ST_CURRENT)
-    ;   R6  : Bandera COUNT (ST_CTRL)
-    ;   R7  : Contenido de ST_CURRENT
+    ;   R5  : Bandera COUNT (ST_CTRL)
+    ;   R6  : Contenido de ST_CURRENT
     ; -----------------------------------------
 
 SysTick_Wait:
 
     ; Preservar contexto (registros usados como variables locales)
-        PUSH    {R4, R5, R6, R7}
+        PUSH    {R4, R5, R6}
 
     ; Inicializar variables locales
         LDR     R4, NVIC_ST_CTRL_R
-        LDR     R5, NVIC_ST_CURRENT_R
-        MOV     R6, #0x00010000                 ; R6 = COUNT flag
+        MOV     R5, #0x00010000                 ; R5 = COUNT flag
 
     ; Monitorear la bandera COUNT (ST_CTRL)
 SysTick_Loop
-        LDR     R7, [R4]                        ; R7 = [NVIC_ST_CTRL_R]
-        ANDS    R7, R6                          ; Condición (COUNT = 1)
+        LDR     R6, [R4]                        ; R6 = [NVIC_ST_CTRL_R]
+        ANDS    R6, R5                          ; Condición (COUNT = 1)
         BEQ     SysTick_Loop                    ; Salto si Z = 1
 
     ; Restaurar contexto (registros usados como variables locales)
-        POP     {R4, R5, R6, R7}
+        POP     {R4, R5, R6}
 
     ; Retorno de subrutina
         BX      LR
