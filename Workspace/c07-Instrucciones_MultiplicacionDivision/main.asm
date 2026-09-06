@@ -49,23 +49,25 @@ main:
 
     ; --- MUL (Multiply) ----------------------
 
-        MUL     R4, R0, R2                      ; R4 = R0 * R2
-        MUL     R5, R1, R3                      ; R5 = R1 * R3
+        MUL     R4, R0, R2                      ; R4 = R0 * R2 = 5 * 1000 = 5,000 (0x1388)
+        MUL     R5, R1, R3                      ; R5 = R1 * R3 = 500 * 1,000,000,000 = 500,000,000,000 (0x0074_6A52_8800)
 
 
     ; --- MLA (Multiply with accumulate) ------
 
-        MLA     R6, R0, R2, R1                  ; R6 = (R0 * R2) + R1
+        MLA     R6, R0, R2, R1                  ; R6 = (R0 * R2) + R1 = (5 * 1000) + 500 = 5,500 (0x157C)
 
 
     ; --- MLS (Multiply and subtract) ---------
 
-        MLS     R7, R0, R2, R6                  ; R7 = R6 - (R0 * R2)
+        MLS     R7, R0, R2, R6                  ; R7 = R6 - (R0 * R2) = 5,500 - (5 * 1000) = 500 (0x01F4)
 
 
     ; --- UMULL (Unsigned multiply, 64-bit) ---
 
-        UMULL   R8, R9, R3, R1                  ; (R9, R8) = R3 * R1
+        UMULL   R8, R9, R3, R1                  ; (R9, R8) = R3 * R1 = 1,000,000,000 * 500 = 500,000,000,000 (0x0074_6A52_8800)
+                                                ; R9 = 0x0074
+                                                ; R8 = 0x6A52_8800
 
 
     ; -----------------------------------------
@@ -94,16 +96,16 @@ main:
 
     ; --- UDIV (Unsigned divide) --------------
 
-        UDIV    R4, R1, R0                      ; R4 = R1 / R0
-        UDIV    R5, R2, R0                      ; R5 = R2 / R0
+        UDIV    R4, R1, R0                      ; R4 = R1 / R0 = 5,500 / 500 = 11 (0x0B)
+        UDIV    R5, R2, R0                      ; R5 = R2 / R0 = 4,294,961,796 / 500 = 8,589,923 (0x0083_1263)
 
 
     ; --- SDIV (Signed divide) ----------------
 
-        SDIV    R6, R1, R0                      ; R6 = R1 / R0 (signada)
-        SDIV    R7, R1, R3                      ; R7 = R1 / R3 (signada)
-        SDIV    R8, R2, R0                      ; R8 = R2 / R0 (signada)
-        SDIV    R9, R2, R3                      ; R9 = R2 / R3 (signada)
+        SDIV    R6, R1, R0                      ; R6 = R1 / R0 (signada) = (+)5,500 / (+)500 = (+)11 (0x0B)
+        SDIV    R7, R1, R3                      ; R7 = R1 / R3 (signada) = (+)5,500 / (-)500 = (-)11 (0xFFFF_FFF5)
+        SDIV    R8, R2, R0                      ; R8 = R2 / R0 (signada) = (-)5,500 / (+)500 = (-)11 (0xFFFF_FFF5)
+        SDIV    R9, R2, R3                      ; R9 = R2 / R3 (signada) = (-)5,500 / (-)500 = (+)11 (0x0B)
 
 
 halt    B       halt
