@@ -115,7 +115,7 @@ SysTick_Init_OneShot:
     ; ciclo.
         LDR     R0, NVIC_ST_RELOAD_R
         MOV     R1, #0
-        STR     R1, [R0]                        ; RELOAD: Reload Value -> Cleared
+        STR     R1, [R0]                        ; RELOAD: Reload Value -> Cleared (SysTick operates in a one-shot way)
 
     ; Retorno de subrutina
         BX      LR
@@ -134,21 +134,20 @@ SysTick_Init_OneShot:
 SysTick_Wait:
 
     ; Preservar contexto (registros usados como variables locales)
-        PUSH    {R4, R5, R6, R7}
+        PUSH    {R4, R5, R6}
 
     ; Inicializar variables locales
         LDR     R4, NVIC_ST_CTRL_R
-        LDR     R5, NVIC_ST_CURRENT_R
-        MOV     R6, #0x00010000                 ; R6 = COUNT flag
+        MOV     R5, #0x00010000                 ; R5 = COUNT flag
 
     ; Monitorear la bandera COUNT (ST_CTRL)
 SysTick_Loop
-        LDR     R7, [R4]                        ; R7 = [NVIC_ST_CTRL_R]
-        ANDS    R7, R6                          ; Condición (COUNT = 1)
+        LDR     R6, [R4]                        ; R6 = [NVIC_ST_CTRL_R]
+        ANDS    R6, R5                          ; Condición (COUNT = 1)
         BEQ     SysTick_Loop                    ; Saltar si (Z = 1)
 
     ; Restaurar contexto (registros usados como variables locales)
-        POP     {R4, R5, R6, R7}
+        POP     {R4, R5, R6}
 
     ; Retorno de subrutina
         BX      LR

@@ -137,7 +137,7 @@ SysTick_Wait:
 SysTick_Loop
         LDR     R6, [R4]                        ; R6 = [NVIC_ST_CTRL_R]
         ANDS    R6, R5                          ; Condición (COUNT = 1)
-        BEQ     SysTick_Loop                    ; Salto si Z = 1
+        BEQ     SysTick_Loop                    ; Saltar si (Z = 1)
 
     ; Restaurar contexto (registros usados como variables locales)
         POP     {R4, R5, R6}
