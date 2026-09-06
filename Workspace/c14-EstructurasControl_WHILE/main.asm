@@ -50,7 +50,7 @@ main:
 
 while_begin                                     ; WHILE
     ; Condición (R0 < 5)
-        CMP     R0, #5
+        CMP     R0, #5                          ; NOTA: Asignar manualmente el valor de prueba en R0 durante la depuración
         BPL     while_end
 
         NOP

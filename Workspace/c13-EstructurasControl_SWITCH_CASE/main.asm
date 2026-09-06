@@ -46,11 +46,11 @@
 main:
 
     ; Condición case1 (R0 = 1)
-        CMP     R0, #1
+        CMP     R0, #1                          ; NOTA: Asignar manualmente el valor de prueba en R0 durante la depuración
         BEQ     case1
 
     ; Condición case2 (R0 = 2)
-        CMP     R0, #2
+        CMP     R0, #2                          ; NOTA: Asignar manualmente el valor de prueba en R0 durante la depuración
         BEQ     case2
 
     ; Condición DEFAULT

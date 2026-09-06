@@ -46,7 +46,7 @@
 main:
 
     ; Condición (R0 = 5)
-        CMP     R0, #5
+        CMP     R0, #5                          ; NOTA: Asignar manualmente el valor de prueba en R0 durante la depuración
         BNE     else
 
 if_begin                                        ; IF

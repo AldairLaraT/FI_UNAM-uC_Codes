@@ -53,7 +53,7 @@ do_while_begin                                  ; DO-WHILE
         NOP
 
     ; Condición (R0 < 5)
-        CMP     R0, #5
+        CMP     R0, #5                          ; NOTA: Asignar manualmente el valor de prueba en R0 durante la depuración
         BMI     do_while_begin
 
 do_while_end                                    ; Fin de la estructura DO-WHILE
