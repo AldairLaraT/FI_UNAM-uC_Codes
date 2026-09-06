@@ -1,37 +1,37 @@
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Universidad Nacional Autónoma de México (UNAM)
 ; Facultad de Ingeniería | Departamento de Electrónica
-; 
+;
 ; Asignatura:   Microprocesadores y Microcontroladores
 ; Profesor:     M.I. Christo Aldair Lara Tenorio
 ; Fecha:        12 de octubre de 2025
-; 
+;
 ; Tema 06:      Puertos de entrada/salida
-; Código 24:    SysTick en modo multi-shot
-; Descripción:  Código en lenguaje ensamblador que conmuta el LED D1 de la tarjeta de desarrollo con
-;               una frecuencia de 1Hz, empleando el SysTick en modo multi-shot.
-; 
+; Código 23:    SysTick en modo multi-shot
+; Descripción:  Código en lenguaje ensamblador que conmuta el LED D1 de la tarjeta de desarrollo
+;               con una frecuencia de 1Hz, empleando el SysTick en modo multi-shot.
+;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .global main
 
 
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Sección de datos
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .data
 
 
-; *************************************************************************************************
+; -------------------------------------------------------------------------------------------------
 ; Sección de código ejecutable
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 
         .text
 
 
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 ; Apuntadores
 
     ; Nested Vectored Interrupt Controller (NVIC) registers
@@ -49,121 +49,132 @@ GPIO_PORTN_DIR_R        .field 0x40064400,32    ; pp760     GPIO Direction
 GPIO_PORTN_DEN_R        .field 0x4006451C,32    ; pp781     GPIO Digital Enable
 
 
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 ; Subrutinas
 
-    ; ********************   ********************
+    ; -----------------------------------------
     ; Subrutina:    GPIO_PortN_Init
-    ;
-    ; Descripción:
-    ;   Inicialización y configuración del puerto GPIO N.
-    ; ********************   ********************
+    ; Descripción:  Inicialización y configuración del puerto GPIO N.
+    ; -----------------------------------------
 
 GPIO_PortN_Init:
-    ; 1. Habilitar la señal de reloj del puerto GPIO y esperar dos ciclos de instrucción
-    ;    para que se estabilice el reloj.
-        LDR   R0, SYSCTL_RCGCGPIO_R
-        LDR   R1, [R0]
-        ORR   R1, #0x1000
-        STR   R1, [R0]                          ; R12: GPIO PortN Run Mode Clock Gating Control -> Enabled
+
+    ; 1. Habilitar la señal de reloj del puerto GPIO y esperar dos ciclos de instrucción para que
+    ;    se estabilice el reloj.
+        LDR     R0, SYSCTL_RCGCGPIO_R
+        LDR     R1, [R0]
+        ORR     R1, #0x1000
+        STR     R1, [R0]                        ; R12: GPIO PortN Run Mode Clock Gating Control -> Enabled
         NOP
         NOP                                     ; Wait for the GPIO PortN clock to stabilize
 
     ; 2. Configurar la dirección de los pines del puerto GPIO.
-        LDR   R0, GPIO_PORTN_DIR_R
-        LDR   R1, [R0]
-        ORR   R1, #0x02
-        STR   R1, [R0]                          ; PortN[1] => DIR: GPIO Data direction -> Output
+        LDR     R0, GPIO_PORTN_DIR_R
+        LDR     R1, [R0]
+        ORR     R1, #0x02
+        STR     R1, [R0]                        ; PortN[1] => DIR: GPIO Data direction -> Output
 
     ; 3. Habilitar las funciones digitales de los pines del puerto GPIO.
-        LDR   R0, GPIO_PORTN_DEN_R
-        LDR   R1, [R0]
-        ORR   R1, #0x02
-        STR   R1, [R0]                          ; PortN[1] => DEN: Digital Enable -> Enabled
+        LDR     R0, GPIO_PORTN_DEN_R
+        LDR     R1, [R0]
+        ORR     R1, #0x02
+        STR     R1, [R0]                        ; PortN[1] => DEN: Digital Enable -> Enabled
 
-        BX    LR
+    ; Retorno de subrutina
+        BX      LR
 
 
-    ; ********************   ********************
+    ; -----------------------------------------
     ; Subrutina:    SysTick_Init
-    ;
-    ; Descripción:
-    ;   Inicialización y configuración del SysTick.
-    ;
+    ; Descripción:  Inicialización y configuración del SysTick.
     ; Parámetros:
     ;   R1  : Valor de carga/inicio del SysTick (ST_RELOAD)
-    ; ********************   ********************
+    ; -----------------------------------------
 
 SysTick_Init:
+
     ; 1. Cargar el valor de cuenta del SysTick.
-        LDR   R0, NVIC_ST_RELOAD_R
-        STR   R1, [R0]                          ; RELOAD: Reload Value
+        LDR     R0, NVIC_ST_RELOAD_R
+        STR     R1, [R0]                        ; RELOAD: Reload Value
 
     ; 2. Limpiar el valor de cuenta actual del SysTick.
-        LDR   R0, NVIC_ST_CURRENT_R
-        MOV   R1, #0
-        STR   R1, [R0]                          ; CURRENT: Current Value -> Cleared
+        LDR     R0, NVIC_ST_CURRENT_R
+        MOV     R1, #0
+        STR     R1, [R0]                        ; CURRENT: Current Value -> Cleared
 
     ; 3. Configurar el SysTick para la operación requerida.
-        LDR   R0, NVIC_ST_CTRL_R
-        LDR   R1, [R0]
-        BIC   R1, #0x04                         ; CLK_SRC: Clock Source -> Precision internal oscillator (PIOSC) divided by 4
-        ; ORR   R1, #0x04                         ; CLK_SRC: Clock Source -> System clock
-        BIC   R1, #0x02                         ; INTEN: Interrupt Enable -> Disabled
-        ORR   R1, #0x01                         ; ENABLE: Enable -> Enables SysTick to operate in a multi-shot way
-        STR   R1, [R0]
+        LDR     R0, NVIC_ST_CTRL_R
+        LDR     R1, [R0]
+        BIC     R1, #0x04                       ; CLK_SRC: Clock Source -> Precision internal oscillator (PIOSC) divided by 4
+        ; ORR     R1, #0x04                       ; CLK_SRC: Clock Source -> System clock
+        BIC     R1, #0x02                       ; INTEN: Interrupt Enable -> Disabled
+        ORR     R1, #0x01                       ; ENABLE: Enable -> Enables SysTick to operate in a multi-shot way
+        STR     R1, [R0]
 
-        BX    LR
+    ; Retorno de subrutina
+        BX      LR
 
 
-    ; ********************   ********************
+    ; -----------------------------------------
     ; Subrutina:    SysTick_Wait
-    ;
-    ; Descripción:
-    ;   Esperar a que el SysTick termine de contar.
-    ;
+    ; Descripción:  Esperar a que el SysTick termine de contar.
     ; Registros reservados (variables locales):
     ;   R4  : Apuntador (NVIC_ST_CTRL_R)
     ;   R5  : Apuntador (ST_CURRENT)
     ;   R6  : Bandera COUNT (ST_CTRL)
     ;   R7  : Contenido de ST_CURRENT
-    ; ********************   ********************
+    ; -----------------------------------------
 
 SysTick_Wait:
-        PUSH  {R4, R5, R6, R7}                  ; Preservar contexto (registros usados como variables locales)
-        LDR   R4, NVIC_ST_CTRL_R
-        LDR   R5, NVIC_ST_CURRENT_R
-        MOVW  R6, #0x0000
-        MOVT  R6, #0x0001                       ; R6 = COUNT flag
 
+    ; Preservar contexto (registros usados como variables locales)
+        PUSH    {R4, R5, R6, R7}
+
+    ; Inicializar variables locales
+        LDR     R4, NVIC_ST_CTRL_R
+        LDR     R5, NVIC_ST_CURRENT_R
+        MOV     R6, #0x00010000                 ; R6 = COUNT flag
+
+    ; Monitorear la bandera COUNT (ST_CTRL)
 SysTick_Loop
-        LDR   R7, [R4]                          ; R7 = [NVIC_ST_CTRL_R]
-        ANDS  R7, R6                            ; Condición (COUNT = 1)
-        BEQ   SysTick_Loop                      ; Salto si Z = 1
+        LDR     R7, [R4]                        ; R7 = [NVIC_ST_CTRL_R]
+        ANDS    R7, R6                          ; Condición (COUNT = 1)
+        BEQ     SysTick_Loop                    ; Salto si Z = 1
 
-        POP   {R4, R5, R6, R7}                  ; Restaurar contexto (registros usados como variables locales)
-        BX    LR
+    ; Restaurar contexto (registros usados como variables locales)
+        POP     {R4, R5, R6, R7}
+
+    ; Retorno de subrutina
+        BX      LR
 
 
-; ***********************************************
+; -------------------------------------------------------------------------------------------------
 ; Código principal
 
 main:
-        BL    GPIO_PortN_Init                   ; Inicialización y configuración del puerto GPIO N
+
+        BL      GPIO_PortN_Init                 ; Inicialización y configuración del puerto GPIO N
 
     ; Parámetros para subrutina SysTick_Init
-        MOVW  R1, #0x0900
-        MOVT  R1, #0x003D                       ; Valor de carga/inicio del SysTick (ST_RELOAD) -> #0x003D.0900 (4,000,000)
-        BL    SysTick_Init                      ; Inicialización y configuración del SysTick
+        MOVW    R1, #0x0900
+        MOVT    R1, #0x003D                     ; Valor de carga/inicio del SysTick (ST_RELOAD) -> #0x003D_0900 (4,000,000)
 
-        LDR   R4, GPIO_PORTN_DATA_R
+        BL      SysTick_Init                    ; Inicialización y configuración del SysTick
+
+        LDR     R4, GPIO_PORTN_DATA_R
+
 loop
-        BL    SysTick_Wait                      ; Esperar a que el SysTick termine de contar
 
-        LDR   R5, [R4]                          ; R5 = [GPIO_PORTN_DATA_R]
-        EOR   R5, #0x02
-        STR   R5, [R4]                          ; LED D1 -> toggle
+        BL      SysTick_Wait                    ; Esperar a que el SysTick termine de contar
 
-        B     loop
+    ; Conmutar el LED D1 de la tarjeta de desarrollo
+        LDR     R5, [R4]                        ; R5 = [GPIO_PORTN_DATA_R]
+        EOR     R5, #0x02
+        STR     R5, [R4]                        ; LED D1 -> toggle
+
+        B       loop
+
+
+halt    B       halt
 
         .end

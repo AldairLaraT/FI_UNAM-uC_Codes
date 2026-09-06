@@ -168,6 +168,7 @@ loop
     ; Parámetros para subrutina SysTick_Init_OneShot
         MOVW    R1, #0x0900
         MOVT    R1, #0x003D                     ; Valor de carga/inicio del SysTick (ST_RELOAD) -> #0x003D_0900 (4,000,000)
+
         BL      SysTick_Init_OneShot            ; Inicialización y configuración del SysTick en modo one-shot
 
         BL      SysTick_Wait                    ; Esperar a que el SysTick termine de contar
