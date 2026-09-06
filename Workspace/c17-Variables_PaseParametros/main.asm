@@ -10,7 +10,7 @@
 ; Código 17:    Variables y pase de parámetros
 ; Descripción:  Declaración y uso de variables globales, locales y arreglos de datos.
 ;               Pase de parámetros siguiendo la convención AAPCS.
-;               Por fines didácticos, las instrucciones necesarias para preservar el contexto
+;               NOTA: Por fines didácticos, las instrucciones necesarias para preservar el contexto
 ;               se encuentran comentadas en un inicio.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
