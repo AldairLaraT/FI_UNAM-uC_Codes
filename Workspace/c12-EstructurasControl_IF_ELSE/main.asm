@@ -9,7 +9,8 @@
 ; Tema 05:      Programación estructurada en lenguaje ensamblador
 ; Código 12:    Estructuras de control: IF-ELSE
 ; Descripción:  Construcción de la estructura de control IF-ELSE en lenguaje ensamblador.
-;               Selección entre dos bloques de instrucciones, a partir del cumplimiento de una condición.
+;               Selección entre dos bloques de instrucciones, a partir del cumplimiento de una
+;               condición.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------
