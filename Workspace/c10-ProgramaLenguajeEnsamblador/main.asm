@@ -75,18 +75,18 @@ main:
         BL      twos_complement                 ; Salto con liga a twos_complement
 
         MOVW    R0, Dato16b
-        MOVT    R0, Dato16b                     ; R0 = Dirección(Dato16b)
+        MOVT    R0, Dato16b                     ; R0 = puntero(Dato16b)
         LDRH    R1, [R0]                        ; R1(15..0) = Dato16b
 
         MOVW    R0, Dato8b
-        MOVT    R0, Dato8b                      ; R0 = Dirección(Dato8b)
+        MOVT    R0, Dato8b                      ; R0 = puntero(Dato8b)
         LDRB    R2, [R0]                        ; R2(7..0) = Dato8b
 
         ADD     R1, R2                          ; R1 = R1 + R2
         MOV     R2, #DOS                        ; R2 = DOS
         MUL     R1, R2                          ; R1 = R1 * R2
         MOVW    R0, Dato32b
-        MOVT    R0, Dato32b                     ; R0 = Dirección(Dato32b)
+        MOVT    R0, Dato32b                     ; R0 = puntero(Dato32b)
         STR     R1, [R0]                        ; [Dato32b] = R1
 
         LDR     R0, SRAM                        ; R0 = SRAM
