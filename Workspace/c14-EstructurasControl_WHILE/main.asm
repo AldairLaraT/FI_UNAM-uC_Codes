@@ -49,8 +49,9 @@ main:
         NOP
 
 while_block                                     ; Bloque WHILE
+    ; Condición (R0 < 5)
         CMP     R0, #5
-        BPL     while_end                       ; Condición (R0 < 5)
+        BPL     while_end
 
         NOP
         NOP
