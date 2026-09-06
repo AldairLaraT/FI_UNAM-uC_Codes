@@ -44,8 +44,9 @@
 
 main:
 
+    ; Condición (R0 = 5)
         CMP     R0, #5
-        BNE     if_end                          ; Condición (R0 = 5)
+        BNE     if_end
 
 if_block                                        ; Bloque IF
         NOP
