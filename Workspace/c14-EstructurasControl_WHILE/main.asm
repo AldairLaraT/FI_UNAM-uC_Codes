@@ -48,14 +48,14 @@ main:
         NOP
         NOP
 
-while_block                                     ; Bloque WHILE
+while_begin                                     ; WHILE
     ; Condición (R0 < 5)
         CMP     R0, #5
         BPL     while_end
 
         NOP
         NOP
-        B       while_block
+        B       while_begin
 
 while_end                                       ; Fin del bloque WHILE
         NOP
