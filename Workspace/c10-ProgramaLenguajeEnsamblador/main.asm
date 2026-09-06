@@ -41,7 +41,7 @@ DOS     .equ    0x02                            ; Asigna un nombre a un valor co
 ; -------------------------------------------------------------------------------------------------
 ; Apuntadores
 
-SRAM    .field  0x20000000,32                   ; Define un campo de bits dentro de una estructura
+SRAM    .field  0x20000000,32                   ; Reserva una constante de 32 bits (dirección base de la SRAM)
 
 
 ; -------------------------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ main:
         STR     R2, [R1]                        ; [Dato32b] = R2
 
         LDR     R1, SRAM                        ; R1 = SRAM
-        LDR     R3, [R0]                        ; R3 = [SRAM]
+        LDR     R3, [R1]                        ; R3 = [SRAM]
 
 
 halt    B       halt
