@@ -74,23 +74,23 @@ main:
         MOV     R0, #50                         ; R0 = 50
         BL      twos_complement                 ; Salto con liga a twos_complement
 
-        MOVW    R0, Dato16b
-        MOVT    R0, Dato16b                     ; R0 = puntero(Dato16b)
-        LDRH    R1, [R0]                        ; R1(15..0) = Dato16b
+        MOVW    R1, Dato16b
+        MOVT    R1, Dato16b                     ; R1 = puntero(Dato16b)
+        LDRH    R2, [R1]                        ; R2(15..0) = Dato16b
 
-        MOVW    R0, Dato8b
-        MOVT    R0, Dato8b                      ; R0 = puntero(Dato8b)
-        LDRB    R2, [R0]                        ; R2(7..0) = Dato8b
+        MOVW    R1, Dato8b
+        MOVT    R1, Dato8b                      ; R1 = puntero(Dato8b)
+        LDRB    R3, [R1]                        ; R3(7..0) = Dato8b
 
-        ADD     R1, R2                          ; R1 = R1 + R2
-        MOV     R2, #DOS                        ; R2 = DOS
-        MUL     R1, R2                          ; R1 = R1 * R2
-        MOVW    R0, Dato32b
-        MOVT    R0, Dato32b                     ; R0 = puntero(Dato32b)
-        STR     R1, [R0]                        ; [Dato32b] = R1
+        ADD     R2, R3                          ; R2 = R2 + R3
+        MOV     R3, #DOS                        ; R3 = DOS
+        MUL     R2, R3                          ; R2 = R2 * R3
+        MOVW    R1, Dato32b
+        MOVT    R1, Dato32b                     ; R1 = puntero(Dato32b)
+        STR     R2, [R1]                        ; [Dato32b] = R2
 
-        LDR     R0, SRAM                        ; R0 = SRAM
-        LDR     R1, [R0]                        ; R1 = [SRAM]
+        LDR     R1, SRAM                        ; R1 = SRAM
+        LDR     R3, [R0]                        ; R3 = [SRAM]
 
 
 halt    B       halt
