@@ -11,6 +11,8 @@
 ; Descripción:  Construcción de la estructura de control DO-WHILE en lenguaje ensamblador.
 ;               Ejecución de un bloque de instrucciones al menos una vez y repetición si se cumple
 ;               una condición.
+;               NOTA: Se usan instrucciones NOP para indicar el cuerpo del código o la estructura
+;                     de control.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------

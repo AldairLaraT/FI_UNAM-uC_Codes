@@ -10,6 +10,8 @@
 ; Código 11:    Estructuras de control: IF
 ; Descripción:  Construcción de la estructura de control IF en lenguaje ensamblador.
 ;               Ejecución de un bloque de instrucciones solo si se cumple una condición.
+;               NOTA: Se usan instrucciones NOP para indicar el cuerpo del código o la estructura
+;                     de control.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------

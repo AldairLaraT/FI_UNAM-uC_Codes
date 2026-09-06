@@ -11,6 +11,8 @@
 ; Descripción:  Construcción de la estructura de control IF-ELSE en lenguaje ensamblador.
 ;               Selección entre dos bloques de instrucciones, a partir del cumplimiento de una
 ;               condición.
+;               NOTA: Se usan instrucciones NOP para indicar el cuerpo del código o la estructura
+;                     de control.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------

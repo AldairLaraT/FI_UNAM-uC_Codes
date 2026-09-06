@@ -11,6 +11,8 @@
 ; Descripción:  Construcción de la estructura de control SWITCH-CASE en lenguaje ensamblador.
 ;               Selección de un bloque de instrucciones entre varias opciones, a partir del valor
 ;               de una variable.
+;               NOTA: Se usan instrucciones NOP para indicar el cuerpo del código o la estructura
+;                     de control.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------

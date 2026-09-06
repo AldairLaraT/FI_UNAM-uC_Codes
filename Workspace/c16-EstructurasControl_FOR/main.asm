@@ -10,6 +10,8 @@
 ; Código 16:    Estructuras de control: FOR
 ; Descripción:  Construcción de la estructura de control FOR en lenguaje ensamblador.
 ;               Ejecución repetida de un bloque de instrucciones controlada por un contador.
+;               NOTA: Se usan instrucciones NOP para indicar el cuerpo del código o la estructura
+;                     de control.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------
@@ -52,11 +54,11 @@ for_begin                                       ; FOR
         CMP     R0, #5
         BEQ     for_end
 
-    ; Actualización del contador (i++)
-        ADD     R0, #1
+        NOP
+        NOP
 
-        NOP
-        NOP
+    ; Actualizar el contador (i++)
+        ADD     R0, #1
 
         B       for_begin
 

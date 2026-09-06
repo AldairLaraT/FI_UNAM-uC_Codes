@@ -11,6 +11,8 @@
 ; Descripción:  Construcción de la estructura de control WHILE en lenguaje ensamblador.
 ;               Ejecución repetida de un bloque de instrucciones mientras se cumpla una condición
 ;               previa.
+;               NOTA: Se usan instrucciones NOP para indicar el cuerpo del código o la estructura
+;                     de control.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------
