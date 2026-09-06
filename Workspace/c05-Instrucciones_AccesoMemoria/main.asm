@@ -9,6 +9,9 @@
 ; Tema 03:      Modos de direccionamiento y conjunto de instrucciones
 ; Código 05:    Instrucciones del procesador ARM Cortex-M4F | Acceso a memoria
 ; Descripción:  Uso de las instrucciones de acceso a memoria del ARM Cortex-M4F.
+;               NOTA: El código no inicializa el contenido de la memoria, por lo que es necesario
+;                     utilizar la herramienta "Memory Browser" para observar el comportamiento de
+;                     las instrucciones.
 ;
 ; Tarjeta de desarrollo:        EK-TM4C1294XL Evaluation board
 ; -------------------------------------------------------------------------------------------------
