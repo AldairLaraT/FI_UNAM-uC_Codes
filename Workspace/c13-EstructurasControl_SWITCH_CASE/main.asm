@@ -45,28 +45,28 @@
 
 main:
 
-    ; Condición del case1 (R0 = 1)
+    ; Condición case1 (R0 = 1)
         CMP     R0, #1
         BEQ     case1
 
-    ; Condición del case2 (R0 = 2)
+    ; Condición case2 (R0 = 2)
         CMP     R0, #2
         BEQ     case2
 
     ; Condición DEFAULT
         B       case_default
 
-case1                                           ; Bloque case1
+case1                                           ; case1
         NOP
         NOP
         B       switch_end
 
-case2                                           ; Bloque case2
+case2                                           ; case2
         NOP
         NOP
         B       switch_end
 
-case_default                                    ; Bloque DEFAULT
+case_default                                    ; DEFAULT
         NOP
         NOP
 
