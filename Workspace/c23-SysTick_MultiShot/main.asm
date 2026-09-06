@@ -120,8 +120,8 @@ SysTick_Init:
     ; Descripción:  Esperar a que el SysTick termine de contar.
     ; Registros reservados (variables locales):
     ;   R4  : Apuntador (NVIC_ST_CTRL_R)
-    ;   R5  : Bandera COUNT (ST_CTRL)
-    ;   R6  : Contenido de ST_CURRENT
+    ;   R5  : Bandera COUNT (NVIC_ST_CTRL_R)
+    ;   R6  : Contenido de NVIC_ST_CTRL_R
     ; -----------------------------------------
 
 SysTick_Wait:
