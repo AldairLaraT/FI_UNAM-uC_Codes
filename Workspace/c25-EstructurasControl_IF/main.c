@@ -11,7 +11,7 @@
  * Descripción: Construcción de la estructura de control IF en lenguaje C.
  *              Ejecución de un bloque de instrucciones solo si se cumple una condición.
  *
- * Tarjeta de desarrollo:   EK-TM4C1294XL Evaluation board
+ * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
 
 
