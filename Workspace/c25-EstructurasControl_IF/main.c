@@ -43,9 +43,11 @@ int main(void) {
     int32_t x = 5;                                                                                  /* Variable de prueba (condición) */
 
     if (x == 5) {
+
         /** Código del bloque IF. */
         i++;
         i++;
+
     }
 
     while (1) {}
