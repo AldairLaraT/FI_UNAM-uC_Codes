@@ -39,7 +39,7 @@
 /** -------------------------------------------
  * Bit fields
  */
-    //  Bit fields in the NVIC_ST_CTRL register                                                         pp.150
+    //  Bit fields in the NVIC_ST_CTRL register                                                        pp.150
 #define NVIC_ST_CTRL_COUNT          0x00010000                                                      /* Count Flag */
 
 
