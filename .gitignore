@@ -1,0 +1,4 @@
+# Configuración local de IntelliSense (VS Code) — contiene rutas absolutas
+# específicas de la instalación de CCS de cada persona, no debe compartirse.
+.vscode/c_cpp_properties.json
+.vscode/compile_commands.json
