@@ -9,8 +9,8 @@
  * Tema 08:     Lenguaje C
  * Código 27:   Estructuras de control: SWITCH-CASE
  * Descripción: Construcción de la estructura de control SWITCH-CASE en lenguaje C.
- *              Selección de un bloque de instrucciones entre varias opciones, a partir del
- *              valor de una variable.
+ *              Selección de un bloque de instrucciones entre varias opciones, a partir del valor
+ *              de una variable.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
