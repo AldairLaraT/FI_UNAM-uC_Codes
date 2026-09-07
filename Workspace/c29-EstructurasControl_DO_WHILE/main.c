@@ -9,8 +9,8 @@
  * Tema 08:     Lenguaje C
  * Código 29:   Estructuras de control: DO-WHILE
  * Descripción: Construcción de la estructura de control DO-WHILE en lenguaje C.
- *              Ejecución de un bloque de instrucciones al menos una vez y repetición si se
- *              cumple una condición.
+ *              Ejecución de un bloque de instrucciones al menos una vez y repetición si se cumple
+ *              una condición.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
