@@ -9,8 +9,8 @@
  * Tema 08:     Lenguaje C
  * Código 28:   Estructuras de control: WHILE
  * Descripción: Construcción de la estructura de control WHILE en lenguaje C.
- *              Ejecución repetida de un bloque de instrucciones mientras se cumpla una
- *              condición previa.
+ *              Ejecución repetida de un bloque de instrucciones mientras se cumpla una condición
+ *              previa.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
