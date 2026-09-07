@@ -34,9 +34,8 @@
  * Funciones
  */
 
-/************************************************
+/** -------------------------------------------
  * Función:     GPIO_PortN_Init
- *
  * Descripción: Inicialización y configuración del puerto GPIO N.
  */
 
