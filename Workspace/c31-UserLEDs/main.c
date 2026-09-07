@@ -77,5 +77,6 @@ int main(void) {
 
         GPIO_PORTN_DATA_R ^= 0x02;                                                                  /* LED D1 -> toggle */
         GPIO_PORTN_DATA_R ^= 0x01;                                                                  /* LED D2 -> toggle */
+
     }
 }
