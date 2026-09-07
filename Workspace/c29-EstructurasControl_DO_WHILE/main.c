@@ -51,6 +51,7 @@ int main(void) {
 
     } while (x == 5);
 
-    while (1) {}
+    while (1) {
 
+    }
 }
