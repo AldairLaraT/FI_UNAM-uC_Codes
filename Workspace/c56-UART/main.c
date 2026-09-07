@@ -8,10 +8,10 @@
  *
  * Tema 09:     Periféricos
  * Código 56:   Universal Asynchronous Receiver/Transmitter (UART)
- * Descripción: Código en lenguaje C que utiliza el módulo UART0 (PA[1,0]) con baud rate de
- *              115200, sin bit de paridad y un bit de parada, para enviar (con SW2) un
- *              caracter en formato ASCII (ajustable con SW1) y recibir comandos por
- *              interrupción para el control de los LED de usuario de la tarjeta de desarrollo.
+ * Descripción: Código en lenguaje C que utiliza el módulo UART0 (PA[1,0]) con baud rate de 115200,
+ *              sin bit de paridad y un bit de parada, para enviar (con SW2) un caracter en formato
+ *              ASCII (ajustable con SW1) y recibir comandos por interrupción para el control de
+ *              los LED de usuario de la tarjeta de desarrollo.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

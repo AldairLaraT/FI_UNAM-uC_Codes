@@ -8,11 +8,11 @@
  *
  * Tema 09:     Periféricos
  * Código 49:   Convertidor analógico digital (ADC): Multicanal
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
- *              de muestras SS_1 para leer el valor de dos potenciómetros conectados en las
- *              entradas analógicas AIN_10 (PB4) y AIN_17 (PK1), usando los LED de usuario de
- *              la tarjeta de desarrollo como indicador del nivel de voltaje de un
- *              potenciómetro, dependiendo del último botón (SW1 o SW2) presionado.
+ * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
+ *              muestras SS_1 para leer el valor de dos potenciómetros conectados en las entradas
+ *              analógicas AIN_10 (PB4) y AIN_17 (PK1), usando los LED de usuario de la tarjeta de
+ *              desarrollo como indicador del nivel de voltaje de un potenciómetro, dependiendo del
+ *              último botón (SW1 o SW2) presionado.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

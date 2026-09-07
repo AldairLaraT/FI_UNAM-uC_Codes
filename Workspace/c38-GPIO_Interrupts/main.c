@@ -8,9 +8,9 @@
  *
  * Tema 07:     Interrupciones y resets
  * Código 38:   Control de un contador con los SW de usuario, empleando interrupciones
- * Descripción: Código en lenguaje C que actualiza el valor de un contador, dependiendo del
- *              botón que se presiona (SW1 y SW2 de la tarjeta de desarrollo), ejecutando una
- *              tarea distinta en el código principal (conmutación de los LED de usuario).
+ * Descripción: Código en lenguaje C que actualiza el valor de un contador, dependiendo del botón
+ *              que se presiona (SW1 y SW2 de la tarjeta de desarrollo), ejecutando una tarea
+ *              distinta en el código principal (conmutación de los LED de usuario).
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

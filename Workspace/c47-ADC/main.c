@@ -8,10 +8,10 @@
  *
  * Tema 09:     Periféricos
  * Código 47:   Convertidor analógico digital (ADC)
- * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador
- *              de muestras SS_3 para leer el valor de un potenciómetro conectado en la entrada
- *              analógica AIN_10 (PB4) y usar los LED de usuario de la tarjeta de desarrollo
- *              como indicador del nivel de voltaje.
+ * Descripción: Código en lenguaje C que configura el módulo ADC_0, empleando el secuenciador de
+ *              muestras SS_3 para leer el valor de un potenciómetro conectado en la entrada
+ *              analógica AIN_10 (PB4) y usar los LED de usuario de la tarjeta de desarrollo como
+ *              indicador del nivel de voltaje.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

@@ -9,9 +9,9 @@
  * Tema 09:     Periféricos
  * Código 53:   Módulo temporizador de propósito general (GPTM): 32bits, one-shot, interrupción
  * Descripción: Código en lenguaje C que utiliza el temporizador TIMER0A en configuración
- *              concatenada (32 bits) y modo one-shot, empleando interrupción por time-out,
- *              para generar un retardo al presionar un botón (SW1) y conmutar el LED de
- *              usuario (D1) de la tarjeta de desarrollo.
+ *              concatenada (32 bits) y modo one-shot, empleando interrupción por time-out, para
+ *              generar un retardo al presionar un botón (SW1) y conmutar el LED de usuario (D1) de
+ *              la tarjeta de desarrollo.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

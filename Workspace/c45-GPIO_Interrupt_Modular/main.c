@@ -8,8 +8,8 @@
  *
  * Tema 09:     Periféricos
  * Código 45:   Control de un LED con un SW de usuario con interrupción (modular)
- * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo,
- *              dependiendo del botón SW1, empleando interrupciones.
+ * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo, dependiendo
+ *              del botón SW1, empleando interrupciones.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

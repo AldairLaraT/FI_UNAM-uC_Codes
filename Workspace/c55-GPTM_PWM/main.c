@@ -9,9 +9,9 @@
  * Tema 09:     Periféricos
  * Código 55:   Módulo temporizador de propósito general (GPTM): Pulse Width Modulation (PWM)
  * Descripción: Código en lenguaje C que utiliza el temporizador TIMER2A en configuración PWM,
- *              generando una señal de 1 KHz con un ciclo de trabajo del 50% en el puerto GPIO
- *              M[0] y los botones (SW1 y SW2) de la tarjeta de desarrollo para modificar el
- *              ciclo de trabajo en saltos del 10%.
+ *              generando una señal de 1 KHz con un ciclo de trabajo del 50% en el puerto GPIO M[0]
+ *              y los botones (SW1 y SW2) de la tarjeta de desarrollo para modificar el ciclo de
+ *              trabajo en saltos del 10%.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */

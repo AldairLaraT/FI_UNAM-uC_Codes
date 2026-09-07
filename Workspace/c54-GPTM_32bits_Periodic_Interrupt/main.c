@@ -9,9 +9,9 @@
  * Tema 09:     Periféricos
  * Código 54:   Módulo temporizador de propósito general (GPTM): 32bits, periodic, interrupción
  * Descripción: Código en lenguaje C que utiliza el temporizador TIMER0A en configuración
- *              concatenada (32 bits) y modo periodic, empleando interrupción por time-out,
- *              para hacer parpadear un LED de usuario (D1), habilitando/deshabilitando el
- *              temporizador con los botones (SW1 y SW2) de la tarjeta de desarrollo.
+ *              concatenada (32 bits) y modo periodic, empleando interrupción por time-out, para
+ *              hacer parpadear un LED de usuario (D1), habilitando/deshabilitando el temporizador
+ *              con los botones (SW1 y SW2) de la tarjeta de desarrollo.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
