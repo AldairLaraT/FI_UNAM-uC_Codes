@@ -8,8 +8,8 @@
  *
  * Tema 08:     Lenguaje C
  * Código 33:   Control de un LED con un SW de usuario sin debounce
- * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo,
- *              dependiendo del botón SW1, sin considerar el efecto rebote.
+ * Descripción: Código en lenguaje C que conmuta el LED D1 de la tarjeta de desarrollo, dependiendo
+ *              del botón SW1, sin considerar el efecto rebote.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
