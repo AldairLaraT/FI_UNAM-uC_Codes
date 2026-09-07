@@ -123,7 +123,7 @@ void SysTick_Init_OneShot(uint32_t SysTick_Reload) {
     NVIC_ST_CTRL_R |= 0x01;                                                                         /* Enables SysTick to operate in a multi-shot way (PIOSC divided by 4) */
 
     /** Limpiar el valor de carga/inicio del SysTick para deshabilitar el contador en el siguiente
-     * ciclo. */
+     *  ciclo. */
     NVIC_ST_RELOAD_R = 0;                                                                           /* RELOAD: Reload Value -> Cleared */
 
 }
