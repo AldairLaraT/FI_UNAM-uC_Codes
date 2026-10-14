@@ -11,6 +11,8 @@
  * Descripción: Construcción de la estructura de control IF-ELSE en lenguaje C.
  *              Selección entre dos bloques de instrucciones, a partir del cumplimiento de una
  *              condición.
+ *              NOTA: Se usan instrucciones NOP de lenguaje ensamblador para indicar el cuerpo del
+ *                    código o la estructura de control.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
@@ -37,24 +39,19 @@
  * Función principal
  */
 
-int main(void) {
-
-    int32_t i = 0;
-    int32_t j = 0;
+int main (void) {
 
     int32_t x = 5;                                                                                  /* Variable de prueba (condición) */
 
     if (x == 5){
 
-        /** Código del bloque IF. */
-        i++;
-        i++;
+        __asm(" NOP");
+        __asm(" NOP");
 
     } else {
 
-        /** Código del bloque ELSE. */
-        j++;
-        j++;
+        __asm(" NOP");
+        __asm(" NOP");
 
     }
 

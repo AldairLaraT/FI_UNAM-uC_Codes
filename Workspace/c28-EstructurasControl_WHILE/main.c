@@ -11,6 +11,8 @@
  * Descripción: Construcción de la estructura de control WHILE en lenguaje C.
  *              Ejecución repetida de un bloque de instrucciones mientras se cumpla una condición
  *              previa.
+ *              NOTA: Se usan instrucciones NOP de lenguaje ensamblador para indicar el cuerpo del
+ *                    código o la estructura de control.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
@@ -37,17 +39,14 @@
  * Función principal
  */
 
-int main(void) {
-
-    int32_t i = 0;
+int main (void) {
 
     int32_t x = 5;                                                                                  /* Variable de prueba (condición) */
 
     while (x == 5) {
 
-        /** Código del bloque WHILE. */
-        i++;
-        i++;
+        __asm(" NOP");
+        __asm(" NOP");
 
     }
 

@@ -11,6 +11,8 @@
  * Descripción: Construcción de la estructura de control SWITCH-CASE en lenguaje C.
  *              Selección de un bloque de instrucciones entre varias opciones, a partir del valor
  *              de una variable.
+ *              NOTA: Se usan instrucciones NOP de lenguaje ensamblador para indicar el cuerpo del
+ *                    código o la estructura de control.
  *
  * Tarjeta de desarrollo:       EK-TM4C1294XL Evaluation board
  */
@@ -37,32 +39,25 @@
  * Función principal
  */
 
-int main(void) {
-
-    int32_t i = 0;
-    int32_t j = 0;
-    int32_t k = 0;
+int main (void) {
 
     int32_t x = 1;                                                                                  /* Variable de prueba (condición) */
 
     switch (x){
 
         case 1:
-            /** Código del bloque case1. */
-            i++;
-            i++;
+            __asm(" NOP");
+            __asm(" NOP");
             break;
 
         case 2:
-            /** Código del bloque case2. */
-            j++;
-            j++;
+            __asm(" NOP");
+            __asm(" NOP");
             break;
 
         default:
-            /** Código del bloque DEFAULT. */
-            k++;
-            k++;
+            __asm(" NOP");
+            __asm(" NOP");
             break;
 
     }
