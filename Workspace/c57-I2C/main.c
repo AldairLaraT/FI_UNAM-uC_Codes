@@ -37,7 +37,7 @@ int error = 0;                                                                  
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     I2C0_Init();                                                                                    /* Inicialización y configuración del I2C0 */
 

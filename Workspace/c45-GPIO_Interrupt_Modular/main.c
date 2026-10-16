@@ -37,7 +37,7 @@ uint32_t Bounce_Delay = 200000;                                                 
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     GPIO_PortJ_Init();                                                                              /* Inicialización y configuración del puerto GPIO J */
     GPIO_PortN_Init();                                                                              /* Inicialización y configuración del puerto GPIO N */

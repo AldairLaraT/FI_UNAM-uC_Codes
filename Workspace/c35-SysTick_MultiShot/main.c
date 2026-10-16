@@ -103,7 +103,7 @@ void SysTick_Init(uint32_t SysTick_Reload) {
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     uint32_t Delay = 4000000;                                                                       /* Valor de carga del SysTick para un retardo de 1s (f = 4MHz) */
 

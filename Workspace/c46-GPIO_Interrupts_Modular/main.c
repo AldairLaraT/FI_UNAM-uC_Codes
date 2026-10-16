@@ -39,7 +39,7 @@ int counter = 0;
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     GPIO_PortF_Init();                                                                              /* Inicialización y configuración del puerto GPIO F */
     GPIO_PortJ_Init();                                                                              /* Inicialización y configuración del puerto GPIO J */

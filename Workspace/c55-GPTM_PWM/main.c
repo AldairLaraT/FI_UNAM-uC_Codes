@@ -42,7 +42,7 @@ uint32_t Bounce_Delay = 200000;                                                 
 
 uint32_t PWM_DutyCycle = 8000;                                                                      /* Ciclo de trabajo de la señal PWM */
 
-int main(void) {
+int main (void) {
 
     GPIO_PortJ_Init();                                                                              /* Inicialización y configuración del puerto GPIO J */
     GPTM2A_PWM_Init(16000, PWM_DutyCycle);                                                          /* Inicialización y configuración del temporizador GPTM2 (subtimer A) en modo PWM */

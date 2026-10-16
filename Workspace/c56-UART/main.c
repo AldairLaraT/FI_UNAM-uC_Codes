@@ -41,7 +41,7 @@ uint8_t UART_Message = 32;                                                      
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     GPIO_PortF_Init();                                                                              /* Inicialización y configuración del puerto GPIO F */
     GPIO_PortJ_Init();                                                                              /* Inicialización y configuración del puerto GPIO J */

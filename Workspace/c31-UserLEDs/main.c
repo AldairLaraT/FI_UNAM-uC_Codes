@@ -69,7 +69,7 @@ void GPIO_PortN_Init(void) {
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     GPIO_PortN_Init();                                                                              /* Inicialización y configuración del puerto GPIO N */
 

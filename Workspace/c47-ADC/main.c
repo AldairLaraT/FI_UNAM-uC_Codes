@@ -39,7 +39,7 @@ uint16_t ADC0_SS3_AIN10;                                                        
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     GPIO_PortF_Init();                                                                              /* Inicialización y configuración del puerto GPIO F */
     GPIO_PortN_Init();                                                                              /* Inicialización y configuración del puerto GPIO N */

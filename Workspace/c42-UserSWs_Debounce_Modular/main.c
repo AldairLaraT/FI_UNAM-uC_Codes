@@ -34,7 +34,7 @@
  * Función principal
  */
 
-int main(void) {
+int main (void) {
 
     uint32_t Bounce_Delay = 320000;                                                                 /* Valor de carga del SysTick para un retardo de rebote de 80ms (f = 4MHz) */
 
